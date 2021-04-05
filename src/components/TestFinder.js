@@ -2,7 +2,7 @@ import React from 'react';
 
 function TestFinder() {
     return (
-        <h1>Hello</h1>
+        <h1>testfinder</h1>
     )
 }
 

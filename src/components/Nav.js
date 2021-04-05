@@ -2,7 +2,7 @@ import React from 'react';
 
 function Nav() {
     return (
-        <h1>Hello</h1>
+        <h1>nav</h1>
     )
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 function CovidUpdate() {
     return (
-        <h1>Hello</h1>
+        <h1>update section</h1>
     )
 }
 

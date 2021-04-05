@@ -2,7 +2,7 @@ import React from 'react';
 
 function VaccineFinder() {
     return (
-        <h1>Hello</h1>
+        <h1>vaccine finder</h1>
     )
 }
 
