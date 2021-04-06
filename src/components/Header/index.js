@@ -1,8 +1,12 @@
 import React from 'react';
+import Banner from './images/covid.jpg'
 
 function Header() {
     return (
-        <h1 class='text-center bg-primary pt-5 pb-5'>Covid-19 Relief</h1> 
+        <div>
+            <img class='container-fluid m-0 p-0' src={Banner} />
+
+        </div>
     )
 }
 

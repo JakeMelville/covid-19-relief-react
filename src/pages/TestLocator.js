@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from '../components/Header/index';
+import TestFinder from '../components/TestFinder/index';
 import Nav from '../components/Nav/index';
 
-function Home() {
+function TestLocator() {
     return (
         <div>
-            <Header />
             <Nav />
+            <TestFinder />
         </div>
     )
 }
 
-export default Home;
+export default TestLocator;
