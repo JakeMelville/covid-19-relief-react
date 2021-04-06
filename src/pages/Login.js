@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -19,7 +20,16 @@ function Login() {
                         <input type="password" id="password-input-login" name="password" placeholder="PASSWORD" />
                     </div>
                     <button type="submit" id="login-btn" class="btn">Login</button>
-                    <a type="button" href="signup.html">Don't have an account? Sign up</a>
+                    <Link 
+                        to='/signup'
+                        className={
+                            window.location.pathname === '/signup'
+                                ? 'btn-link active'
+                                : 'btn-link'
+                        }
+                        >
+                            Don't have an account? Sign up
+                    </Link>
                 </form>
             </div>
         </div>

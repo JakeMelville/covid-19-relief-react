@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
     return (
@@ -30,12 +31,21 @@ function SignUp() {
                         </div>
 
                         <button type="submit" id="signup-btn" class="btn btn-primary">Sign Up!</button>
-                        <a href="login.html"> Have an account? Log in instead.</a>
+                        <Link
+                            to='/login'
+                            className={
+                                window.location.pathname === '/login'
+                                    ? 'btn-link active'
+                                    : 'btn-link'
+                            }
+                        >
+                            Have an account? Log in instead
+                        </Link>
                     </form>
                 </div>
             </div>
             <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/site-banner/cases_rising_banner_1200x250_v5.png" alt="wear a mask, stay 6 feet away, avoid crowds and get a vaccine" />
-      </div>
+        </div>
 
     )
 }
