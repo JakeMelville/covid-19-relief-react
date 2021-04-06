@@ -4,14 +4,14 @@ import './style.css'
 
 function Nav() {
     return (
-        <div class='float-right'>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <div className='float-right'>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                    <li class="nav-item">
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                    <li className="nav-item">
                             <Link
                                 to='/'
                                 className={
@@ -23,7 +23,7 @@ function Nav() {
                                 Home
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link
                                 to='/myprofile'
                                 className={
@@ -35,7 +35,7 @@ function Nav() {
                                 My Profile
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link
                                 to='/testlocator'
                                 className={
@@ -47,7 +47,7 @@ function Nav() {
                                 Test Locator
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link
                                 to='/vaccinefinder'
                                 className={
@@ -59,7 +59,7 @@ function Nav() {
                                 Vaccine Finder
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link
                                 to='/login'
                                 className={
@@ -71,7 +71,7 @@ function Nav() {
                                 Login
                             </Link>
                         </li>
-                        <li class="nav-item">
+                        <li className="nav-item">
                             <Link
                                 to='/signup'
                                 className={
