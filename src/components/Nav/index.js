@@ -11,64 +11,76 @@ function Nav() {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <Link 
-                                to='/login'
+                    <li class="nav-item">
+                            <Link
+                                to='/'
                                 className={
-                                    window.location.pathname === '/login'
-                                    ? 'nav-link active'
-                                    : 'nav-link'
+                                    window.location.pathname === '/'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
                                 }
-                                >
-                                    Login
+                            >
+                                Home
                             </Link>
                         </li>
                         <li class="nav-item">
-                            <Link 
-                                to='/signup'
-                                className={
-                                    window.location.pathname === '/signup'
-                                    ? 'nav-link active'
-                                    : 'nav-link'
-                                }
-                                >
-                                    Sign Up
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link 
-                                to='/testlocator'
-                                className={
-                                    window.location.pathname === '/testlocator'
-                                    ? 'nav-link active'
-                                    : 'nav-link'
-                                }
-                                >
-                                    Test Locator
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link 
-                                to='/vaccinefinder'
-                                className={
-                                    window.location.pathname === '/vaccinefinder'
-                                    ? 'nav-link active'
-                                    : 'nav-link'
-                                }
-                                >
-                                    Vaccine Finder
-                            </Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link 
+                            <Link
                                 to='/myprofile'
                                 className={
                                     window.location.pathname === '/myprofile'
-                                    ? 'nav-link active'
-                                    : 'nav-link'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
                                 }
-                                >
-                                    My Profile
+                            >
+                                My Profile
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link
+                                to='/testlocator'
+                                className={
+                                    window.location.pathname === '/testlocator'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
+                                }
+                            >
+                                Test Locator
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link
+                                to='/vaccinefinder'
+                                className={
+                                    window.location.pathname === '/vaccinefinder'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
+                                }
+                            >
+                                Vaccine Finder
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link
+                                to='/login'
+                                className={
+                                    window.location.pathname === '/login'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
+                                }
+                            >
+                                Login
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link
+                                to='/signup'
+                                className={
+                                    window.location.pathname === '/signup'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
+                                }
+                            >
+                                Sign Up
                             </Link>
                         </li>
                     </ul>

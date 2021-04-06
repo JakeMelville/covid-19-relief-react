@@ -1,14 +1,12 @@
 import React from 'react';
-import Header from '../components/Header/index';
 import Nav from '../components/Nav/index';
 
-function Home() {
+function VaccineFinder() {
     return (
         <div>
-            <Header />
             <Nav />
         </div>
     )
 }
 
-export default Home;
+export default VaccineFinder;
