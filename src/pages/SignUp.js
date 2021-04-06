@@ -6,6 +6,18 @@ function SignUp() {
         <div>
             <div class="card">
                 <div class="card-header">
+                    <button class='btn float-left'>
+                        <Link
+                            to='/'
+                            className={
+                                window.location.pathname === '/'
+                                    ? 'btn-link active'
+                                    : 'btn-link'
+                            }
+                        >
+                            Home
+                    </Link>
+                    </button>
                     <h2>Create Account</h2>
                 </div>
                 <div id="signup" role="tabpanel">
