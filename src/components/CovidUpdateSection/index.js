@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 function CovidUpdate() {
-    const [CovidUpdateState, setCovidUpdateState] = useState({})
+    const [covidUpdateState, setcovidUpdateState] = useState({})
 
     const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus+in+the+us&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
     //https://api.nytimes.com/svc/topstories/v2/health.json?&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
@@ -16,15 +16,15 @@ function CovidUpdate() {
                 console.log() 
                 console.log(res)
 
-                setCovidUpdateState(res.data.response.docs[0])
+                setcovidUpdateState(res.data.response.docs[0])
 
             }
             )
             return (
                 <div className="card">
-                    <p>{CovidUpdateState.source}</p>
-                    <p>{CovidUpdateState.lead_paragraph}</p>
-                    <p>{CovidUpdateState.snippet}</p>
+                    <p>{covidUpdateState.source}</p>
+                    <p>{covidUpdateState.lead_paragraph}</p>
+                    <p>{covidUpdateState.snippet}</p>
                     <p>{covidUpdateState.headline.main}</p>
                     
                 </div>
