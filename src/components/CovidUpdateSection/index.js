@@ -5,7 +5,7 @@ import axios from 'axios';
 function CovidUpdate() {
     const [CovidUpdateState, setCovidUpdateState] = useState({})
 
-    const baseURL = 'https://api.nytimes.com/svc/topstories/v2/health.json?&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
+    const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus+in+the+us&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
     //https://api.nytimes.com/svc/topstories/v2/health.json?&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
     //'https://api.nytimes.com/svc/topstories/v2/us.json?api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
     //https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
@@ -16,15 +16,17 @@ function CovidUpdate() {
                 console.log() 
                 console.log(res)
 
-                setCovidUpdateState(res.data.results[10])
+                setCovidUpdateState(res.data.response.docs[0])
 
             }
             )
             return (
                 <div className="card">
-                    <p>testing</p>
-                    <p>{CovidUpdateState.title}</p>
-                    <p>{CovidUpdateState.abstract}</p>
+                    <p>{CovidUpdateState.source}</p>
+                    <p>{CovidUpdateState.lead_paragraph}</p>
+                    <p>{CovidUpdateState.snippet}</p>
+                    <p>{CovidUpdateState.headline}</p>
+                    
                 </div>
             ) 
 
