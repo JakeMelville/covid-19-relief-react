@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -9,6 +9,12 @@ import VaccineFinder from './pages/VaccineFinder';
 import './App.css';
 
 function App() {
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <Signup setToken={setToken} />
+  }
+  
   return (
     <Router>
       <div className="App">
