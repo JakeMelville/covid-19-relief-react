@@ -20,7 +20,7 @@ function getToken() {
 }
 
 function App() {
-  const [token, setToken] = useState();
+  const token = getToken();
 
   if(!token) {
     return <Signup setToken={setToken} />
