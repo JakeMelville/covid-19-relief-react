@@ -1,12 +1,12 @@
 import React from "react";
-import { User } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth = ({ children }) => {
     const domain = process.env.REACT_APP_AUTH0_DOMAIN;
     const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
-    const profile = User();
+    const profile = useHistory();
     
     const callBack = (appState) => {
         profile.push(appState?.returnTo || window.location.pathname);
