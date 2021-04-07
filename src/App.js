@@ -23,7 +23,7 @@ function App() {
   const token = getToken();
 
   if(!token) {
-    return <Signup setToken={setToken} />
+    return <SignUp setToken={setToken} />
   }
 
   return (
