@@ -25,7 +25,7 @@ function CovidUpdate() {
                     <p>{CovidUpdateState.source}</p>
                     <p>{CovidUpdateState.lead_paragraph}</p>
                     <p>{CovidUpdateState.snippet}</p>
-                    <p>{CovidUpdateState.headline}</p>
+                    <p>{covidUpdateState.headline.main}</p>
                     
                 </div>
             ) 
