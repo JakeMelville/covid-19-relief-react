@@ -23,22 +23,22 @@ function SignUp() {
                 <div id="signup" role="tabpanel">
                     <form id="signup-form" className="card-body" method="post" action="/api/patient/">
                         <div className="form-group">
-                            <label className="control-label col-sm-2 font-weight-bold" for="name-input-signup">Name</label>
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="name-input-signup">Name</label>
                             <input type="text" id="username-input-signup" name="name" />
                         </div>
 
                         <div className="form-group">
-                            <label className="control-label col-sm-2 font-weight-bold" for="cellPhone-input-signup">Cell Phone</label>
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="cellPhone-input-signup">Cell Phone</label>
                             <input type="text" id="username-input-signup" name="cellPhone" />
                         </div>
 
                         <div className="form-group">
-                            <label className="control-label col-sm-2 font-weight-bold" for="email-input-signup">Email</label>
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="email-input-signup">Email</label>
                             <input type="text" id="username-input-signup" name="email" />
                         </div>
 
                         <div className="form-group">
-                            <label className="control-label col-sm-2 font-weight-bold" for="password-input-signup">Password</label>
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="password-input-signup">Password</label>
                             <input type="password" id="password-input-signup" name="password" />
                         </div>
 

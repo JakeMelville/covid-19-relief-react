@@ -20,15 +20,15 @@ function Login() {
                     </Link>
                     </button>
                     <h2 className="p-5">WELCOME BACK!</h2>
-                    <img className="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card image cap" />
+                    <img className="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card cap" />
                 </div>
                 <form id="login-form" className="card-body" method="post" action="/api/patient/login">
                     <div className="form-group">
-                        <label for="username-input-login" className="control-label col-sm font-weight-bold">Username</label>
+                        <label htmlFor="username-input-login" className="control-label col-sm font-weight-bold">Username</label>
                         <input type="text" id="username-input-login" name="email" placeholder="EMAIL" />
                     </div>
                     <div className="form-group">
-                        <label for="password-input-login" className="control-label col-sm font-weight-bold">Password</label>
+                        <label htmlFor="password-input-login" className="control-label col-sm font-weight-bold">Password</label>
                         <input type="password" id="password-input-login" name="password" placeholder="PASSWORD" />
                     </div>
                     <button type="submit" id="login-btn" className="btn">Login</button>
