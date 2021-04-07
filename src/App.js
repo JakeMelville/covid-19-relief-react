@@ -8,13 +8,24 @@ import TestLocator from './pages/TestLocator';
 import VaccineFinder from './pages/VaccineFinder';
 import './App.css';
 
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+};
+// const [token, setToken] = useState();
+
 function App() {
-  const [token, setToken] = useState();
+  const token = getToken();
 
   if(!token) {
     return <Signup setToken={setToken} />
   }
-  
+
   return (
     <Router>
       <div className="App">

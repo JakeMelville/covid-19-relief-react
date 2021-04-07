@@ -4,7 +4,7 @@ import Col from "../components/Col";
 import Row from "../components/Row";
 // import { Link } from 'react-router-dom';
 
-const SignUp = () => {
+export default function Signup({ setToken }) {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
@@ -58,4 +58,7 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+Signup.propTypes = { 
+    setToken: PropTypes.func.isRequired
+};
+// export default SignUp;
