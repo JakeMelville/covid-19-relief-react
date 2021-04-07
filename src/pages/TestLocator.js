@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import TestFinder from '../components/TestFinder/index';
 import Nav from '../components/Nav/index';
+import API from '../utils/API';
 
 function TestLocator() {
   const [locationState, setLocationState] = useState('')
@@ -15,41 +15,41 @@ function TestLocator() {
   const [mapSrc, setMapSrc] = useState('')
 
 
-  let latLngDataUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=WFU3qGtFSrPpKOpC8vhpd3bfXKHEP4My&location=' + locationState;
-  axios.get(latLngDataUrl)
+  API.getLatLng(locationState)
     .then(res => {
-      // console.log(res.data.results);
+      console.log('line 20 location', locationState);
+      console.log(res.data);
       setLatState(res.data.results[0].locations[0].displayLatLng.lat);
       setLngState(res.data.results[0].locations[0].displayLatLng.lng);
 
+
+      API.getTestingSites(latState, lngState)
+        .then(res => {
+          // console.log(res.data);  
+          setTestingSite1('1. ' + res.data.items[0].address.label);
+          setTestingSite2('2. ' + res.data.items[1].address.label);
+          setTestingSite3('3. ' + res.data.items[2].address.label);
+          setTestingSite4('4. ' + res.data.items[3].address.label);
+          setTestingSite5('5. ' + res.data.items[4].address.label);
+          setMapSrc(`https://open.mapquestapi.com/staticmap/v5/map?key=WFU3qGtFSrPpKOpC8vhpd3bfXKHEP4My&banner=Covid+19+Test+Sights|top&size=400,400&zoom=10&locations=${res.data.items[0].access[0].lat},${res.data.items[0].access[0].lng}|marker-1||${res.data.items[1].access[0].lat},${res.data.items[1].access[0].lng}|marker-2||${res.data.items[2].access[0].lat},${res.data.items[2].access[0].lng}|marker-3||${res.data.items[3].access[0].lat},${res.data.items[3].access[0].lng}|marker-4||${res.data.items[4].access[0].lat},${res.data.items[4].access[0].lng}|marker-5||`)
+        })
     })
-    .catch(err => console.log('line 34', err));
+    .catch(err => console.log('line 37', err));
 
-  let testingSitesUrl = `https://discover.search.hereapi.com/v1/discover?apikey=2E2hXtlLTixuNk2K6LWH7tzmKtQscKlf74M2DC_PX4A&q=Covid&at=${latState},${lngState}&limit=5`
-  axios.get(testingSitesUrl)
-    .then(res => {
-      // console.log(res.data);  
-      setTestingSite1('1. ' + res.data.items[0].address.label);
-      setTestingSite2('2. ' + res.data.items[1].address.label);
-      setTestingSite3('3. ' + res.data.items[2].address.label);
-      setTestingSite4('4. ' + res.data.items[3].address.label);
-      setTestingSite5('5. ' + res.data.items[4].address.label);
-      setMapSrc(`https://open.mapquestapi.com/staticmap/v5/map?key=WFU3qGtFSrPpKOpC8vhpd3bfXKHEP4My&banner=Covid+19+Test+Sights|top&size=400,400&zoom=10&locations=${res.data.items[0].access[0].lat},${res.data.items[0].access[0].lng}|marker-1||${res.data.items[1].access[0].lat},${res.data.items[1].access[0].lng}|marker-2||${res.data.items[2].access[0].lat},${res.data.items[2].access[0].lng}|marker-3||${res.data.items[3].access[0].lat},${res.data.items[3].access[0].lng}|marker-4||${res.data.items[4].access[0].lat},${res.data.items[4].access[0].lng}|marker-5||`)
-    })
-    .catch(err => console.log('line 47', err));
-
-
-
-  const handleSubmit = (event) => {
+  const handleKeyPress = (event) => {
     event.preventDefault();
-    setLocationState(event.target.value)
+    if (event.key === 'Enter') {
+      setLocationState(event.target.value)
+      console.log('loc state', locationState);
+
+    }
   }
 
   return (
     <div>
       <Nav />
       <TestFinder
-        handleSubmit={handleSubmit}
+        handleKeyPress={handleKeyPress}
         results={locationState}
       />
       <div className='row text-left pl-5 justify-content-center'>
@@ -60,7 +60,7 @@ function TestLocator() {
           <li className='p-2'>{testingSite4}</li>
           <li className='p-2'>{testingSite5}</li>
         </ul>
-        <img className='col-4' src={mapSrc} alt='map'/>
+        <img className='col-4' src={mapSrc} alt='map' />
       </div>
     </div>
   )

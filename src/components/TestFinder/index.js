@@ -10,8 +10,8 @@ function TestFinder(props) {
                         <div className="row">
                             <h2 className="col-12 text-center">Find Testing Centers Near You</h2>
                             <form className="col-12 text-center pb-3">
-                                <input id="input" type="text" placeholder="City, State" value={props.locationState} />
-                                <button id="submitBtn" className='btn-primary' type="submit" onClick={props.handleSubmit}>Submit</button>
+                                <input id="input" type="text" placeholder="City, State" value={props.locationState}  onKeyPress={props.handleSubmit}/>
+                                <button id="submitBtn" className='btn-primary'>Submit</button>
                             </form>
                         </div>
                     </div>
