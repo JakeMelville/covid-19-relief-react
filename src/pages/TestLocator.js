@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import TestFinder from '../components/TestFinder/index';
 import Nav from '../components/Nav/index';
 import API from '../utils/API';
@@ -16,11 +16,10 @@ function TestLocator() {
 
 
   const handleSubmit = (event) => {
-    const inputRef = useRef();
 
     console.log('handlesubmit runs');
     event.preventDefault();
-    setLocationState(event.target.value)
+    // setLocationState(event.target.value)
     console.log(locationState);
 
     if (locationState) {
@@ -50,13 +49,19 @@ function TestLocator() {
       console.log('still nothing');
     }
   }
+  // const handleInputChange = (event) => {
+  //   event.preventDefault();
+  //   setLatState({
+  //     [event.target.loc]:
+  //   })
+  // }
 
   return (
     <div>
       <Nav />
       <form className="col-12 text-center pb-3" onSubmit={handleSubmit}>
-        <input id="input" type="text" placeholder="City, State" value={locationState}/>
-        <button id="submitBtn" className='btn-primary' type='submit'>Submit</button>
+        <input id="input" type="text" placeholder="City, State" value={locationState} onChange={(e) => setLocationState(e.target.value)}/>
+        <button id="submitBtn" className='btn-primary' type='reset'>Submit</button>
       </form>
       <div className='row text-left pl-5 justify-content-center'>
         <ul className='col-4'>
