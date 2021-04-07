@@ -40,7 +40,7 @@ function TestLocator() {
 
 
 
-  const handleInputChange = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setLocationState(event.target.value)
   }
@@ -49,7 +49,7 @@ function TestLocator() {
     <div>
       <Nav />
       <TestFinder
-        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
         results={locationState}
       />
       <div className='row text-left pl-5 justify-content-center'>
