@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../CovidUpdateSection/style.css'
 
 
 
@@ -14,7 +15,7 @@ function CovidUpdate() {
     //'https://api.nytimes.com/svc/topstories/v2/us.json?api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
     //https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
     //https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus+in+the+us&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
-    
+
     useEffect(() => {
         //make axios call here
         axios.get(baseURL)
@@ -31,7 +32,7 @@ function CovidUpdate() {
             )
             return (
                 <div className="card">
-                    <p>{covidUpdateState.source}</p>
+                    <p class="source">{covidUpdateState.source}</p>
                     <p>{covidUpdateState.headline.main}</p>
                     <p>{covidUpdateState.lead_paragraph}</p>
                     <p>{covidUpdateState.snippet}</p>
