@@ -30,7 +30,7 @@ const Signup = () => {
                             Home
                     </Link>
                     </button>
-                    <h2>Create Account</h2>
+                    <h2 className='text-center'>Create Account</h2>
                 </div>
                 <div id="signup" role="tabpanel">
                     <form id="signup-form" className="card-body" method="post" action="/api/patient/">
