@@ -2,7 +2,6 @@
 // import Container from "../components/Container";
 // import Col from "../components/Col";
 // import Row from "../components/Row";
-// import PropTypes from "prop-types";
 // // import { Link } from 'react-router-dom';
 
 // export default function Signup({ setToken }) {
@@ -58,11 +57,6 @@
 //     </div>
 //     );
 // };
-
-// Signup.propTypes = { 
-//     setToken: PropTypes.func.isRequired
-// }
-// export default SignUp;
 
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
