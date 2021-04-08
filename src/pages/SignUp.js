@@ -16,42 +16,59 @@ const Signup = () => {
 
     return (
         <div>
-            <div className="mt-4">
+            <div className="card">
+                <div className="card-header">
+                    <button className='btn float-left'>
+                        <Link
+                            to='/'
+                            className={
+                                window.location.pathname === '/'
+                                    ? 'btn-link active'
+                                    : 'btn-link'
+                            }
+                        >
+                            Home
+                    </Link>
+                    </button>
                     <h2>Create Account</h2>
                 </div>
-                <form onSubmit={handleSubmit}>
-                <Container className="mt-3 px-5">
-                    <Row className="form-group">
-                        <Col size="12">
-                            <input
-                                className="form-control"
-                                type="text"
-                                placeholder="Username"
-                                name="username"
-                                onChange={e => setUsername(e.target.value)}
-                                />
-                        </Col>
-                    </Row>
-                    <Row className="form-group">
-                        <Col size="12">
-                            <input
-                                className="form-control"
-                                type="password"
-                                placeholder="Password"
-                                name="password"
-                                onChange={e => setPassword(e.target.value)}
-                            />
-                        </Col>
-                    </Row>
-                    <button className="btn btn-success" type="submit">
-                        Submit
-                    </button>
-                </Container>
-                <Container className="mt-4">
-                    <h3>Hello {username}!</h3>
-                </Container>
-            </form>
-        <div>
+                <div id="signup" role="tabpanel">
+                    <form id="signup-form" className="card-body" method="post" action="/api/patient/">
+                        <div className="form-group">
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="name-input-signup">Name</label>
+                            <input type="text" id="username-input-signup" name="name" />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="cellPhone-input-signup">Cell Phone</label>
+                            <input type="text" id="username-input-signup" name="cellPhone" />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="email-input-signup">Email</label>
+                            <input type="text" id="username-input-signup" name="email" />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="control-label col-sm-2 font-weight-bold" htmlFor="password-input-signup">Password</label>
+                            <input type="password" id="password-input-signup" name="password" />
+                        </div>
+
+                        <button type="submit" id="signup-btn" className="btn btn-primary">Sign Up!</button>
+                        <Link
+                            to='/login'
+                            className={
+                                window.location.pathname === '/login'
+                                    ? 'btn-link active'
+                                    : 'btn-link'
+                            }
+                        >
+                            Have an account? Log in instead
+                        </Link>
+                    </form>
+                </div>
+            </div>
+
             <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/site-banner/cases_rising_banner_1200x250_v5.png" alt="wear a mask, stay 6 feet away, avoid crowds and get a vaccine" />
         </div>
     </div>

@@ -1,37 +1,32 @@
 import React from 'react';
+import './style.css';
 
-function TestFinder() {
+function TestFinder(props) {
     return (
         <div>
-            <div class="row pt-5">
-                <div class="col-lg">
-                    <div class="container">
-                        <div class="row">
-                            <h2 class="col-12 text-center">Find Testing Centers Near You</h2>
-                            <form class="col-12 text-center pb-3">
-                                <input id="input" type="text" placeholder="City, State"/>
-                                <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
-                            </form>
-                    <div class="col-6" id="test-locations">
-                        <ul id="resultsLocations">
-                            <li class="mb-2" id="result-1"></li>
-                            <li class="mb-2" id="result-2"></li>
-                            <li class="mb-2" id="result-3"></li>
-                            <li class="mb-2" id="result-4"></li>
-                            <li class="mb-2" id="result-5"></li>
-                        </ul>
+            <div className='pic bg-image'>
+                <div className="container w-100 m-0 p-">
+                    <div className="row w-100 m-0">
+                        <h2 className="col-12 text-center">Find Testing Centers Near You</h2>
+                        <form className="col-12 text-center pb-3" onSubmit={props.handleSubmit}>
+                            <input id="input" type="text" placeholder="City, State" value={props.locationState} onChange={(e) => props.setLocationState(e.target.value)} />
+                            <button id="submitBtn" className='btn-primary'>Submit</button>
+                        </form>
                     </div>
-                    <div class="col-6" id="map"></div>
-                    {/* <form id="formSight" class="mt-5 col-12 text-center">
-                        <input id="chosenLocation" type="text" placeholder="Selected Test Sight"/>
-                        <button id="submitLocation"class="btn-primary" type="submit">Save location to profile</button>
-                    </form> */}
-
+                </div>
+                <div className='row text-left pl-5 justify-content-center'>
+                    <ul className='col-4'>
+                        <li className='p-2'>{props.testingSite1}</li>
+                        <li className='p-2'>{props.testingSite2}</li>
+                        <li className='p-2'>{props.testingSite3}</li>
+                        <li className='p-2'>{props.testingSite4}</li>
+                        <li className='p-2'>{props.testingSite5}</li>
+                    </ul>
+                    <img className='col-4' src={props.mapSrc} />
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
+        </div >
+
     )
 }
 

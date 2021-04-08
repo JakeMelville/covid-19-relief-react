@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 function Login() {
     return (
         <div>
-            <div class="card text-center">
-                <div class="card-header">
-                    <button class='btn float-left'>
+            <div className="card text-center">
+                <div className="card-header">
+                    <button className='btn float-left'>
                         <Link
                             to='/'
                             className={
@@ -19,19 +19,19 @@ function Login() {
                             Home
                     </Link>
                     </button>
-                    <h2 class="p-5">WELCOME BACK!</h2>
-                    <img class="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card image cap" />
+                    <h2 className="p-5">WELCOME BACK!</h2>
+                    <img className="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card cap" />
                 </div>
-                <form id="login-form" class="card-body" method="post" action="/api/patient/login">
-                    <div class="form-group">
-                        <label for="username-input-login" class="control-label col-sm font-weight-bold">Username</label>
+                <form id="login-form" className="card-body" method="post" action="/api/patient/login">
+                    <div className="form-group">
+                        <label htmlFor="username-input-login" className="control-label col-sm font-weight-bold">Username</label>
                         <input type="text" id="username-input-login" name="email" placeholder="EMAIL" />
                     </div>
-                    <div class="form-group">
-                        <label for="password-input-login" class="control-label col-sm font-weight-bold">Password</label>
+                    <div className="form-group">
+                        <label htmlFor="password-input-login" className="control-label col-sm font-weight-bold">Password</label>
                         <input type="password" id="password-input-login" name="password" placeholder="PASSWORD" />
                     </div>
-                    <button type="submit" id="login-btn" class="btn">Login</button>
+                    <button type="submit" id="login-btn" className="btn">Login</button>
                     <Link
                         to='/signup'
                         className={
