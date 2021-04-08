@@ -1,3 +1,5 @@
+import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
@@ -6,7 +8,7 @@ import TestLocator from './pages/TestLocator';
 import VaccineFinder from './pages/VaccineFinder';
 import './App.css';
 
-function App () {
+function App() {
   return (
     <Router>
       <div className="App">
