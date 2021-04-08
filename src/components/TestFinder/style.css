@@ -1,6 +1,11 @@
+html, body {
+    height: 100%;
+    width: 100%;
 
-body {
-    height: 100vh;
+}
+.pic {
+    height: 900px;
+    width: 100%;
     background-image: url("./images/blue.jpg");
     background-position: center;
     background-repeat: no-repeat;

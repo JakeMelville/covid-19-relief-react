@@ -4,8 +4,8 @@ import './style.css';
 function TestFinder(props) {
     return (
         <div>
-            <body>
-                <div className="container w-100 m-0 p-5">
+            <div className='pic bg-image'>
+                <div className="container w-100 m-0 p-">
                     <div className="row w-100 m-0">
                         <h2 className="col-12 text-center">Find Testing Centers Near You</h2>
                         <form className="col-12 text-center pb-3" onSubmit={props.handleSubmit}>
@@ -14,7 +14,17 @@ function TestFinder(props) {
                         </form>
                     </div>
                 </div>
-            </body>
+                <div className='row text-left pl-5 justify-content-center'>
+                    <ul className='col-4'>
+                        <li className='p-2'>{props.testingSite1}</li>
+                        <li className='p-2'>{props.testingSite2}</li>
+                        <li className='p-2'>{props.testingSite3}</li>
+                        <li className='p-2'>{props.testingSite4}</li>
+                        <li className='p-2'>{props.testingSite5}</li>
+                    </ul>
+                    <img className='col-4' src={props.mapSrc} />
+                </div>
+            </div>
         </div >
 
     )
