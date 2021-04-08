@@ -1,11 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
 function CovidUpdate() {
-    <iframe src="https://www.nytimes.com/2021/04/05/us/coronavirus-today-vaccines.html"
-    scrolling="no" height="285" frameborder="0" width="300" title="Vaccine Finder Widget"
-    style="overflow: hidden" frameborder="0">
-    </iframe>
+    
+    const [covidUpdateState, setcovidUpdateState] = useState({
+        headline: { main: "" }
+    })
+
+    const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus+in+the+us&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
+    //https://api.nytimes.com/svc/topstories/v2/health.json?&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
+    //'https://api.nytimes.com/svc/topstories/v2/us.json?api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D'
+    //https://api.nytimes.com/svc/search/v2/articlesearch.json?q=covid&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
+    //https://api.nytimes.com/svc/search/v2/articlesearch.json?q=coronavirus+in+the+us&api-key=hAIQqDrmbcaMwVbXpvGgflMSyUEYnZ4D
+    
+    useEffect(() => {
+        //make axios call here
+        axios.get(baseURL)
+            .then(res => {
+                console.log() 
+                console.log(res)
+                setcovidUpdateState(res.data.response.docs[0])
+
+      }, [])            
+
+                
+
+            }
+            )
+            return (
+                <div className="card">
+                    <p>{covidUpdateState.source}</p>
+                    <p>{covidUpdateState.headline.main}</p>
+                    <p>{covidUpdateState.lead_paragraph}</p>
+                    <p>{covidUpdateState.snippet}</p>
+                    
+                    
+                </div>
+            ) 
+
+            
+    //return Axios.get(`${config.baseURL}`, {headers: config.headers}).then(res => {
+        //return res.results[0].section[0].title['Coronavirus Briefing: What Happened Today'];
     
 }
 
