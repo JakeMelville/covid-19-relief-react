@@ -11,3 +11,7 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.btn {
+    display: none;
+}
