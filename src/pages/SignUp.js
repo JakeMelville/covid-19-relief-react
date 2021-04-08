@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Container from "../components/Container";
 import Col from "../components/Col";
 import Row from "../components/Row";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const [username, setUsername] = useState();
@@ -71,7 +71,6 @@ const Signup = () => {
 
             <img src="https://www.cdc.gov/coronavirus/2019-ncov/images/site-banner/cases_rising_banner_1200x250_v5.png" alt="wear a mask, stay 6 feet away, avoid crowds and get a vaccine" />
         </div>
-    </div>
     );
 };
 
