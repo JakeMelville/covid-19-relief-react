@@ -53,12 +53,6 @@ import { Link } from 'react-router-dom';
 class Auth extends Component {
     login() {
         console.log("state", this.state)
-        fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        headers: {
-            "ACCEPT" : "application/JSON"
-            
-        }
     }
     render() {
         return (
