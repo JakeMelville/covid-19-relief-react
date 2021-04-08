@@ -6,7 +6,7 @@ import TestLocator from './pages/TestLocator';
 import VaccineFinder from './pages/VaccineFinder';
 import './App.css';
 
-
+function App () {
   return (
     <Router>
       <div className="App">
