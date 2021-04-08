@@ -6,7 +6,6 @@ import SignUp from './pages/SignUp';
 import MyProfile from './pages/MyProfile'
 import TestLocator from './pages/TestLocator';
 import VaccineFinder from './pages/VaccineFinder';
-import './App.css';
 
 function App() {
   return (
