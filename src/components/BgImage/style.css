@@ -1,8 +1,7 @@
-
-body {
-    height: 100vh;
+#bgImage {
     background-image: url("./images/blue.jpg");
+    height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: true;
     background-size: cover;
 }

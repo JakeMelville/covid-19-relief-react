@@ -46,22 +46,22 @@ function TestLocator() {
   return (
     <div>
       <Nav />
-      <TestFinder 
-        handleSubmit={handleSubmit}
-        results={locationState}
-        setLocationState={setLocationState}
-      />
-      <div className='row text-left pl-5 justify-content-center'>
-      <ul className='col-4'>
-        <li className='p-2'>{testingSite1}</li>
-        <li className='p-2'>{testingSite2}</li>
-        <li className='p-2'>{testingSite3}</li>
-        <li className='p-2'>{testingSite4}</li>
-        <li className='p-2'>{testingSite5}</li>
-      </ul>
-      <img className='col-4' src={mapSrc} />
+        <TestFinder
+          handleSubmit={handleSubmit}
+          results={locationState}
+          setLocationState={setLocationState}
+        />
+        <div className='row text-left pl-5 justify-content-center'>
+          <ul className='col-4'>
+            <li className='p-2'>{testingSite1}</li>
+            <li className='p-2'>{testingSite2}</li>
+            <li className='p-2'>{testingSite3}</li>
+            <li className='p-2'>{testingSite4}</li>
+            <li className='p-2'>{testingSite5}</li>
+          </ul>
+          <img className='col-4' src={mapSrc} />
+        </div>
     </div>
-    </div >
   );
 };
 
