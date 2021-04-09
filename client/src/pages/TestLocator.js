@@ -63,6 +63,7 @@ function TestLocator() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    addBtn();
     console.log('handlesubmit runs');
     // console.log(locationState);
 
@@ -76,10 +77,16 @@ function TestLocator() {
   }
 
 
-  // function addBtn() {
-  //   console.log('addbtn works');
-  //   document.querySelector('.btn').style.removeProperty('display')
-  // }
+  function addBtn() {
+    console.log('addbtn works');
+    document.getElementById('contactBtn').style.display = 'block'
+    document.getElementById('contactBtn2').style.display = 'block'
+    document.getElementById('contactBtn3').style.display = 'block'
+    document.getElementById('contactBtn4').style.display = 'block'
+    document.getElementById('contactBtn5').style.display = 'block'
+  }
+
+  
 
   return (
     <div>

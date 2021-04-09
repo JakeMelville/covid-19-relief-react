@@ -15,28 +15,33 @@ function TestFinder(props) {
                     </div>
                 </div>
                 <div className='row text-left pl-5 justify-content-center'>
-                    <ul className='col-4'>
+                    <ul className='col-5'>
                         <li className='p-2'>{props.testingSite1}</li>
-                        <li>{props.link1}</li>
-                        <li>{props.number1}</li>
+                        <button id='contactBtn' type='button' className='btn btn-small btn-outline-info' >Contact</button>
+                        {/* <li>{props.link1}</li>
+                        <li>{props.number1}</li> */}
 
                         <li className='p-2'>{props.testingSite2}</li>
-                        <li>{props.link2}</li>
-                        <li>{props.number2}</li>
+                        <button id='contactBtn2' type='button' className='btn btn-small btn-outline-info'>Contact</button>
+                        {/* <li>{props.link2}</li>
+                        <li>{props.number2}</li> */}
 
                         <li className='p-2'>{props.testingSite3}</li>
-                        <li>{props.link3}</li>
-                        <li>{props.number3}</li>
+                        <button id='contactBtn3' type='button' className='btn btn-small btn-outline-info'>Contact</button>
+                        {/* <li>{props.link3}</li>
+                        <li>{props.number3}</li> */}
 
                         <li className='p-2'>{props.testingSite4}</li>
-                        <li>{props.link4}</li>
-                        <li>{props.number4}</li>
+                        <button id='contactBtn4' type='button' className='btn btn-small btn-outline-info'>Contact</button>
+                        {/* <li>{props.link4}</li>
+                        <li>{props.number4}</li> */}
 
                         <li className='p-2'>{props.testingSite5}</li>
-                        <li>{props.link5}</li>
-                        <li>{props.number5}</li>
+                        <button id='contactBtn5' type='button' className='btn btn-small btn-outline-info'>Contact</button>
+                        {/* <li>{props.link5}</li>
+                        <li>{props.number5}</li> */}
                     </ul>
-                    <img className='col-4 img-fluid' src={props.mapSrc} />
+                    <img className='col-5' src={props.mapSrc} />
                 </div>
             </div>
         </div >
