@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
-import axios from "axios";
 import PatientSignup from "../components/Signup/signup";
 import Nav from '../components/Nav';
+import API from '../utils/API';
 
 
 class Signup extends React.Component {
    state = {
             // loggedIn: localStorage.getItem(loggedIn),
             name: "",
-            // cellPhone: "",
+            cellPhone: "",
             email: "",
-            password: "",
-            visible: false,
-            success: false
+            password: ""
         }
     
     patientSignUp = () => {
-        const newPateint = new FormData();
-        newPateint.append("name", this.state.name);
-        newPateint.append("cellPhone", this.state.cellPhone);
-        newPateint.append("email", this.state.email);
-        newPateint.append("password", this.state.password);
+        const newPatient = {
+            name: this.state.name,
+            cellPhone: this.state.cellPhone,
+            email: this.state.email,
+            password: this.state.password
+        };
+        
+        console.log(newPatient);
 
-        axios.post("/patient", newPateint)
+        API.savePatient(newPatient)
         .then((res) => {
-            if(res.data.error) {
-                this.setState({ failureMessage: res.data.error })
-            } else {
-                this.setState({ success: true})
-            }
+            console.log("patient saved: ", res)
         })
         .catch((err) => {
             console.log(err)
