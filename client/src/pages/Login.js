@@ -55,10 +55,10 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <Nav
+                {/* <Nav
                     loggedIn={this.state.loggedIn}
                     patientLogin={this.patientLogin}>
-                </Nav>
+                </Nav> */}
                 <PatientLogin
                 handleInputChange={this.handleInputChange}
                 login={this.login}

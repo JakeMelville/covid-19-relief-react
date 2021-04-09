@@ -57,10 +57,10 @@ class Signup extends React.Component {
     render() {
         return (
             <div>
-                <Nav
-                    loggedIn={this.state.loggedIn}
-                    patientLogin={this.patientLogin}>
-                </Nav>
+                {/* <Nav />
+                    // loggedIn={this.state.loggedIn}
+                    // patientLogin={this.patientLogin}>
+                // </Nav> */}
                 <PatientSignup
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}>
