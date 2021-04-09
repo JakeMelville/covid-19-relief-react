@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function PatientSignup(props) {
   return (
@@ -86,7 +86,7 @@ function PatientSignup(props) {
               />
             </div>
 
-            <button type="submit" id="signup-btn" className="btn btn-primary">
+            <button type="submit" id="signup-btn" className="btn btn-primary" onClick={props.handleFormSubmit}>
               Sign Up!
             </button>
             <Link

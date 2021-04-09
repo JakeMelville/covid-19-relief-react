@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { Link, withRouter } from 'react-router-dom';
 import PatientSignup from "../components/Signup/signup";
 import Nav from '../components/Nav';
 
 
 class Signup extends React.Component {
    state = {
-            loggedIn: localStorage.getItem(loggedIn),
+            // loggedIn: localStorage.getItem(loggedIn),
             name: "",
-            cellPhone: "",
+            // cellPhone: "",
             email: "",
             password: "",
             visible: false,

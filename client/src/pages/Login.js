@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from "axios";
-import { Link, withRouter } from 'react-router-dom';
 import PatientLogin from "../components/Login/login";
 import Nav from '../components/Nav';
 
@@ -14,7 +13,7 @@ class Login extends React.Component {
         }
     
     login = (patientData) => {
-        const info = this;
+        // const info = this;
         axios.post("/login", patientData)
         .then((res) => {
             localStorage.setItem("patientID", res.data.id);
