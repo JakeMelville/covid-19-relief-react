@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import Modal from "react-bootstrap/Modal";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function TestFinder(props) {
     return (
@@ -17,55 +19,79 @@ function TestFinder(props) {
                 <div className='row text-left pl-5 justify-content-center'>
                     <ul className='col-5'>
                         <li className='p-2'>{props.testingSite1}</li>
+                        <button id='contactBtn' type='button' className='btn btn-small btn-outline-info' onClick={props.showModal}>Contact</button>
+                        <Modal show={props.isOpen} onHide={props.hideModal}>
+                            <Modal.Body>
+                                Website: <a href={props.link1} target='_blank'>{props.link1}</a>
+                            </Modal.Body>
+                            <Modal.Body>
+                                Phone Number: {props.number1}
+                            </Modal.Body>
+                        <Modal.Footer>
+                            <button onClick={props.hideModal}>Cancel</button>
+                        </Modal.Footer>
+                        </Modal>
 
+                    <li className='p-2'>{props.testingSite2}</li>
+                    <button id='contactBtn2' type='button' className='btn btn-small btn-outline-info' onClick={props.showModal2}>Contact</button>
+                    <Modal show={props.isOpen2} onHide={props.hideModal}>
+                            <Modal.Body>
+                                Website: <a href={props.link2} target='_blank'>{props.link2}</a>
+                            </Modal.Body>
+                            <Modal.Body>
+                                Phone Number: {props.number2}
+                            </Modal.Body>
+                        <Modal.Footer>
+                            <button onClick={props.hideModal2}>Cancel</button>
+                        </Modal.Footer>
+                        </Modal>
+                    
 
-                        <button id='contactBtn' type='button' className='btn btn-small btn-outline-info' data-toggle="modal" data-target="#exampleModal" >Contact</button>
-                        <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div className="modal-dialog" role="document">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div className="modal-body">
-                                        ...
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" className="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        {/* <li>{props.link1}</li>
-                        <li>{props.number1}</li> */}
+                    <li className='p-2'>{props.testingSite3}</li>
+                    <button id='contactBtn3' type='button' className='btn btn-small btn-outline-info'  onClick={props.showModal3}>Contact</button>
+                    <Modal show={props.isOpen3} onHide={props.hideModal}>
+                            <Modal.Body>
+                                Website: <a href={props.link3} target='_blank'>{props.link3}</a>
+                            </Modal.Body>
+                            <Modal.Body>
+                                Phone Number: {props.number3}
+                            </Modal.Body>
+                        <Modal.Footer>
+                            <button onClick={props.hideModal3}>Cancel</button>
+                        </Modal.Footer>
+                        </Modal>
+                    
+                    <li className='p-2'>{props.testingSite4}</li>
+                    <button id='contactBtn4' type='button' className='btn btn-small btn-outline-info'  onClick={props.showModal4}>Contact</button>
+                    <Modal show={props.isOpen4} onHide={props.hideModal}>
+                            <Modal.Body>
+                                Website: <a href={props.link4} target='_blank'>{props.link4}</a>
+                            </Modal.Body>
+                            <Modal.Body>
+                                Phone Number: {props.number4}
+                            </Modal.Body>
+                        <Modal.Footer>
+                            <button onClick={props.hideModal4}>Cancel</button>
+                        </Modal.Footer>
+                        </Modal>
 
-                        <li className='p-2'>{props.testingSite2}</li>
-                        <button id='contactBtn2' type='button' className='btn btn-small btn-outline-info'>Contact</button>
-                        {/* <li>{props.link2}</li>
-                        <li>{props.number2}</li> */}
-
-                        <li className='p-2'>{props.testingSite3}</li>
-                        <button id='contactBtn3' type='button' className='btn btn-small btn-outline-info'>Contact</button>
-                        {/* <li>{props.link3}</li>
-                        <li>{props.number3}</li> */}
-
-                        <li className='p-2'>{props.testingSite4}</li>
-                        <button id='contactBtn4' type='button' className='btn btn-small btn-outline-info'>Contact</button>
-                        {/* <li>{props.link4}</li>
-                        <li>{props.number4}</li> */}
-
-                        <li className='p-2'>{props.testingSite5}</li>
-                        <button id='contactBtn5' type='button' className='btn btn-small btn-outline-info'>Contact</button>
-                        {/* <li>{props.link5}</li>
-                        <li>{props.number5}</li> */}
+                    <li className='p-2'>{props.testingSite5}</li>
+                    <button id='contactBtn5' type='button' className='btn btn-small btn-outline-info'  onClick={props.showModal5}>Contact</button>
+                    <Modal show={props.isOpen5} onHide={props.hideModal}>
+                            <Modal.Body>
+                                Website: <a href={props.link5} target='_blank'>{props.link5}</a>
+                            </Modal.Body>
+                            <Modal.Body>
+                                Phone Number: {props.number5}
+                            </Modal.Body>
+                        <Modal.Footer>
+                            <button onClick={props.hideModal5}>Cancel</button>
+                        </Modal.Footer>
+                        </Modal>
                     </ul>
-                    <img className='col-5' src={props.mapSrc} />
-                </div>
+                <img className='col-5' src={props.mapSrc} />
             </div>
+        </div>
         </div >
 
     )
