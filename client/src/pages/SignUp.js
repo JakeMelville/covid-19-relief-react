@@ -33,7 +33,7 @@ const Signup = () => {
                     <h2 className='text-center'>Create Account</h2>
                 </div>
                 <div id="signup" role="tabpanel">
-                    <form id="signup-form" className="card-body" method="post" action="/api/patient/">
+                    <form id="signup-form" className="card-body" method="post" action="/api/user/">
                         <div className="form-group">
                             <label className="control-label col-sm-2 font-weight-bold" htmlFor="name-input-signup">Name</label>
                             <input type="text" id="username-input-signup" name="name" />
