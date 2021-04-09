@@ -9,18 +9,25 @@ const MongoStore = require("connect-mongo")(session);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: false }));
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-// Add routes, both API and view
-app.use(passport.initialize());
-app.use("./client/src/Auth/passport")(passport);
-app.use("./api/user", user);
+app.use(
+  session({
+    secret: "super secret",
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    }),
+    resave: false,
+    saveUninitialized: false
+  })
+);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covid-relief", {
@@ -29,6 +36,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covid-relief", 
   useCreateIndex: true,
   useFindAndModify: false,
 });
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(routes);
 
 // Start the API server
 app.listen(PORT, function() {
