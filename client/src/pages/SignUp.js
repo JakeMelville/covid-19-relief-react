@@ -1,5 +1,80 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import axios from "axios";
+import { Link, withRouter } from 'react-router-dom';
+import Signup from "../components/Signup/signup";
+import Nav from '../components/Nav';
+
+
+class Signup extends React.Component {
+   state = {
+            loggedIn: localStorage.getItem(loggedIn),
+            name: "",
+            cellPhone: "",
+            email: "",
+            password: "",
+            visible: false,
+            success: false
+        }
+    
+    patientSignUp = () => {
+        const newPateint = new PatientData();
+        newPateint.append("name", this.state.name);
+        newPateint.append("cellPhone", this.state.cellPhone);
+        newPateint.append("email", this.state.email);
+        newPateint.append("password", this.state.password);
+
+        axios.post("/patient", newPateint)
+        .then((res) => {
+            if(res.data.error) {
+                this.setState({ failureMessage: res.data.error })
+            } else {
+                this.setState({ success: true})
+            }
+        })
+        .catch((err) => {
+            console.log(error)
+        });
+    }
+    
+    handleInputChange = e => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = e => {
+        e.preventDefault();
+        this.patientSignUp();
+    };
+
+    patientLogin = () => {
+        if (this.state.loggedIn === "true") {
+            localStorage.setItem("loggedIn", "false");
+            localStorage.setItem("userID", "");
+            localStorage.setItem("email", "");
+            this.setState({ email: "", loggedIn: "false", userID: ""});
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <Nav
+                    loggedIn={this.state.loggedIn}
+                    patientLogin={this.patientLogin}>
+                </Nav>
+                <Signup
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}>
+                </Signup>
+            </div>
+        )
+    }
+}
+
+export default Signup;
 
 // const Signup = () => {
 //     const [username, setUsername] = useState();
@@ -29,34 +104,34 @@ import { Link } from 'react-router-dom';
 //     // Grab the form (signup) _> post the values to the db (w/out authenication -> make sure the basic post route works)
 //     // Attempt to retriee information (w/ out authenotication)
     
-class Signup extends Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            cellPhone: "",
-            email: "",
-            password: "",
-            errors: {}
-        };
-    }
+// class Signup extends Component {
+//     constructor() {
+//         super();
+//         this.state = {
+//             name: "",
+//             cellPhone: "",
+//             email: "",
+//             password: "",
+//             errors: {}
+//         };
+//     }
 
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
-    };
+//     onChange = e => {
+//         this.setState({ [e.target.id]: e.target.value });
+//     };
 
-    onSubmit = e => {
-        e.preventDefault();
+//     onSubmit = e => {
+//         e.preventDefault();
 
-    const newUser = {
-        name: this.state.name,
-        cellPhone: this.state.cellPhone,
-        email: this.state.email,
-        password: this.state.password
-    };
+//     const newUser = {
+//         name: this.state.name,
+//         cellPhone: this.state.cellPhone,
+//         email: this.state.email,
+//         password: this.state.password
+//     };
 
-    console.log(newUser);
-    };
+//     console.log(newUser);
+//     };
 
 //     render() {
 //         const { errors } = this.state;

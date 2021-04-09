@@ -44,12 +44,6 @@ class Login extends React.Component {
         this.login(loginIn);
     };
 
-    // openModal = () => {
-    //     this.setState({
-    //         visible : true
-    //     });
-    // }
-
     patientLogin = () => {
         if (this.state.loggedIn === "true") {
             localStorage.setItem("loggedIn", "false");
