@@ -36,7 +36,7 @@ function TestFinder(props) {
                         <li>{props.link5}</li>
                         <li>{props.number5}</li>
                     </ul>
-                    <img className='col-4' src={props.mapSrc} />
+                    <img className='col-4 img-fluid' src={props.mapSrc} />
                 </div>
             </div>
         </div >
