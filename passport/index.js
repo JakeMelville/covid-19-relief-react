@@ -1,7 +1,7 @@
-const db = require("../models/Patients");
+const db = require("../models");
 const passport = require("passport");
 const local = require("./local");
-const { Deserializer } = require("node:v8");
+// const { Deserializer } = require("node:v8");
 
 passport.serializeUser((patient, done) => {
     console.log("*** serializeUser called, patient: ");
