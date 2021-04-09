@@ -1,7 +1,8 @@
  import React from "react";
+ import { Link, withRouter } from 'react-router-dom';
 
 
- function Login(props) {
+ function PatientLogin(props) {
  return (
         <div>
             <div className="card text-center">
@@ -48,4 +49,4 @@
 }
 
 
-export default Login;
+export default PatientLogin;

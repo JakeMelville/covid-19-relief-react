@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Link, withRouter } from 'react-router-dom';
-import Signup from "../components/Signup/signup";
+import PatientSignup from "../components/Signup/signup";
 import Nav from '../components/Nav';
 
 
@@ -17,7 +17,7 @@ class Signup extends React.Component {
         }
     
     patientSignUp = () => {
-        const newPateint = new PatientData();
+        const newPateint = new FormData();
         newPateint.append("name", this.state.name);
         newPateint.append("cellPhone", this.state.cellPhone);
         newPateint.append("email", this.state.email);
@@ -32,7 +32,7 @@ class Signup extends React.Component {
             }
         })
         .catch((err) => {
-            console.log(error)
+            console.log(err)
         });
     }
     
@@ -65,10 +65,10 @@ class Signup extends React.Component {
                     loggedIn={this.state.loggedIn}
                     patientLogin={this.patientLogin}>
                 </Nav>
-                <Signup
+                <PatientSignup
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}>
-                </Signup>
+                </PatientSignup>
             </div>
         )
     }

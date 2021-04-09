@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Link, withRouter } from 'react-router-dom';
-import Login from "../components/Login/login";
+import PatientLogin from "../components/Login/login";
 import Nav from '../components/Nav';
 
 
@@ -60,12 +60,12 @@ class Login extends React.Component {
                     loggedIn={this.state.loggedIn}
                     patientLogin={this.patientLogin}>
                 </Nav>
-                <Login
+                <PatientLogin
                 handleInputChange={this.handleInputChange}
                 login={this.login}
                 bypassLogin={this.bypassLogin}
                 handleFormSubmit={this.handleFormSubmit}>
-                </Login>
+                </PatientLogin>
             </div>
         )
     }

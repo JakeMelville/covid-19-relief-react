@@ -1,6 +1,7 @@
 import React from "react";
+import { Link, withRouter } from 'react-router-dom';
 
-function Signup(props) {
+function PatientSignup(props) {
   return (
     <div>
       <div className="card">
@@ -110,4 +111,4 @@ function Signup(props) {
   );
 }
 
-export default Signup;
+export default PatientSignup;
