@@ -13,9 +13,12 @@ router.post("/signup", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then((user) => {
-    if (user) {
-      return res.status(400).json({ email: "Email already exists!" });
+  const email = req.body.email;
+  const password = req.body.password;
+
+  User.findOne({ email }).then((user) => {
+    if (!user) {
+      return res.status(400).json({ email: "Email not found!" });
     } else {
       const newUser = new User({
         name: req.body.name,
@@ -24,16 +27,43 @@ router.post("/signup", (req, res) => {
         password: req.body.password,
       });
 
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(newUser.password, salt, (err, hash) => {
-          if (err) throw err;
-          newUser.password = hash;
-          newUser
-            .save()
-            .then((user) => res.json(user))
-            .catch((err) => console.log(err));
-        });
-      });
+    
+    //   bcrypt.genSalt(10, (err, salt) => {
+    //     bcrypt.hash(newUser.password, salt, (err, hash) => {
+    //       if (err) throw err;
+    //       newUser.password = hash;
+    //       newUser
+    //         .save()
+    //         .then((user) => res.json(user))
+    //         .catch((err) => console.log(err));
     }
+
+    bcrypt.compare(password, user.password)
+    .then(isMatch => {
+        if (isMatch) {
+            const payload = {
+            id: user.id,
+            name: user.name
+        };
+
+    jwt.sign(
+        payload,
+        // keys.secretOrKey,
+        // {
+        //     expiresIn: 31556926 
+        // },
+        (err, token) => {
+            res.json({
+                success: true,
+                token: "Bearer " + token
+            });
+        }
+    );
+    } else {
+        return res.status(400).json({ passwordincorrect: "Password incorrect" });
+    }
+    });
   });
 });
+
+module.exports = router;

@@ -1,7 +1,8 @@
 const express = require("express");
-
+// const bodyParser = require("body-parser");
+const passport = require("passport");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/api/user");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -14,7 +15,9 @@ app.use(express.json());
 // }
 
 // Add routes, both API and view
-app.use(routes);
+app.use(passport.initialize());
+app.use("./client/src/Auth/passport")(passport);
+app.use("./api/user", user);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/covid-relief", {
