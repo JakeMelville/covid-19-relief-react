@@ -1,14 +1,13 @@
 const router = require("express").Router();
-const db = require("../models/index");
 const path = require("path");
-const patientRoute = require("./patients")
+const apiRoutes = require("./api");
 // const testLocation = require("./testLocation")
 
-router.use(patientRoute);
+router.use("/api", apiRoutes);
 // router.use(testLocation);
 
-// router.get("*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../../client/public/home.js"))
-// });
+router.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"))
+});
 
 module.exports = router;
