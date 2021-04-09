@@ -12,6 +12,22 @@ html, body {
     background-size: cover;
 }
 
-.btn {
+#contactBtn {
+    display: none;
+}
+
+#contactBtn2 {
+    display: none;
+}
+
+#contactBtn3 {
+    display: none;
+}
+
+#contactBtn4 {
+    display: none;
+}
+
+#contactBtn5 {
     display: none;
 }
