@@ -1,37 +1,67 @@
-import React, { useState } from 'react';
-import Container from "../components/Container";
-import Col from "../components/Col";
-import Row from "../components/Row";
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const Signup = () => {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
-    const [theValue, setTheValue] = useState();
-    const handleSubmit = e => {
-        e.preventDefault();
-        console.log("username is " + username);
-        console.log("password is " + password);
-    };
-    // Create a onchange method to capture the data (input)
-    const handleChange = (e)=> {
-        e.preventDefault();
+// const Signup = () => {
+//     const [username, setUsername] = useState();
+//     const [password, setPassword] = useState();
+//     const [theValue, setTheValue] = useState();
+//     const handleSubmit = e => {
+//         e.preventDefault();
+//         console.log("username is " + username);
+//         console.log("password is " + password);
+//     };
+//     // Create a onchange method to capture the data (input)
+//     const handleChange = (e)=> {
+//         e.preventDefault();
 
-        console.log(e.target.value);
-        console.log("working")
-        setTheValue (e.target.value)
-        // setUsername(theValue)
-    //    console.log(theValue)
-    }
-    // grab the value as a const to later use > will refactor in a moment
-    const takeTheValue = (e)=> {
-        e.preventDefault();
-        console.log(theValue);
-    }
+//         console.log(e.target.value);
+//         console.log("working")
+//         setTheValue (e.target.value)
+//         // setUsername(theValue)
+//     //    console.log(theValue)
+//     }
+//     // grab the value as a const to later use > will refactor in a moment
+//     const takeTheValue = (e)=> {
+//         e.preventDefault();
+//         console.log(theValue);
+//     }
 
-    // Grab the form (signup) _> post the values to the db (w/out authenication -> make sure the basic post route works)
-    // Attempt to retriee information (w/ out authenotication)
+//     // Grab the form (signup) _> post the values to the db (w/out authenication -> make sure the basic post route works)
+//     // Attempt to retriee information (w/ out authenotication)
     
+class Signup extends Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            cellPhone: "",
+            email: "",
+            password: "",
+            errors: {}
+        };
+    }
+
+    onChange = e => {
+        this.setState({ [e.target.id]: e.target.value });
+    };
+
+    onSubmit = e => {
+        e.preventDefault();
+
+    const newUser = {
+        name: this.state.name,
+        cellPhone: this.state.cellPhone,
+        email: this.state.email,
+        password: this.state.password
+    };
+
+    console.log(newUser);
+    };
+
+    render() {
+        const { errors } = this.state;
+    }
+}
     return (
         <div>
             <div className="card">
@@ -51,25 +81,25 @@ const Signup = () => {
                     <h2 className='text-center'>Create Account</h2>
                 </div>
                 <div id="signup" role="tabpanel">
-                    <form id="signup-form" value={theValue}  onChange={(e)=>handleChange(e)} onSubmit={(e)=> takeTheValue(e)}  className="card-body">
+                    <form id="signup-form" noValidate  onSubmit={this.onSubmit}  className="card-body">
                         <div className="form-group">
                             <label className="control-label col-sm-2 font-weight-bold" htmlFor="name-input-signup">Name</label>
-                            <input type="text" id="username-input-signup" name="name" />
+                            <input type="text" id="username-input-signup" onChange={this.onChange} value={this.state.name} error={errors.name} id="name" />
                         </div>
 
                         <div className="form-group">
                             <label className="control-label col-sm-2 font-weight-bold" htmlFor="cellPhone-input-signup">Cell Phone</label>
-                            <input type="text" id="username-input-signup" name="cellPhone" />
+                            <input type="text" id="username-input-signup" onChange={this.onChange} value={this.state.cellPhone} error={errors.cellPhone} id="cellPhone" />
                         </div>
 
                         <div className="form-group">
                             <label className="control-label col-sm-2 font-weight-bold" htmlFor="email-input-signup">Email</label>
-                            <input type="text" id="username-input-signup" name="email" />
+                            <input type="text" id="username-input-signup" onChange={this.onChange} value={this.state.email} error={errors.email} id="email" />
                         </div>
 
 //                         <div className="form-group">
 //                             <label className="control-label col-sm-2 font-weight-bold" htmlFor="password-input-signup">Password</label>
-//                             <input type="password" id="password-input-signup" name="password" />
+//                             <input type="password" id="password-input-signup" onChange={this.onChange} value={this.state.password} error={errors.password} id="password" />
 //                         </div>
 
                         <button type="submit" id="signup-btn"  className="btn btn-primary">Sign Up!</button>
