@@ -1,29 +1,34 @@
-import React from 'react';
-import Nav from '../components/Nav/index';
+// import React from 'react';
+// import PatientProfile from "../components/MyProfile/myProfile";
+// import axios from "axios";
 
-function MyProfile() {
-    return (
-        <div>
-            <Nav />
-        </div>
-    )
-}
+// class MyProfile extends React.Component {
+//     state = {
+//         loggedIn: localStorage.getItem("loggedIn"),
+//         userID: "",
+
+//         name: "",
+//         cellPhone: "",
+//         email: "",
+//         password: "",
+
+//         visible: true,
+//     }
+
+//     patientInfo = (patientData) => {
+//         axios.get(`/pateint/${patientData}`)
+//         .then((res) => {
+//             this.state({
+//                 name: res.data[0].name,
+//                 cellPhone: res.data[0].cellPhone,
+//                 email: res.data[0].email,
+//             });
+//         })
+//         .catch((err) => {
+//             console.log(error);
+//         });
+//     }
+// }
+
 
 // export default MyProfile;
-
-// import React from "react";
-// import { useAuth0 } from "@auth0/auth0-react";
-
-// const MyProfile = () => {
-//     const { user } = useAuth0();
-
-//     return (
-//             <div>
-//                 <h2>{user.name}</h2>
-//                 <p>{user.email}</p>
-//                 {JSON.stringify(user)}
-//             </div>
-//     );
-// };
-
-export default MyProfile;
