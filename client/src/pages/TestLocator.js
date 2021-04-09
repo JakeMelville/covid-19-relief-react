@@ -86,7 +86,9 @@ function TestLocator() {
     document.getElementById('contactBtn5').style.display = 'block'
   }
 
-  
+  function showContactInfo() {
+
+  }
 
   return (
     <div>
