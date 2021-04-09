@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css'
 
-function Nav() {
+function Nav(props) {
     return (
         <div className='float-right'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,7 +11,8 @@ function Nav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                    <li className="nav-item">
+                    <li className={( props.loggedIn === "true") ? "" : "hiddenForNav"}><Link to="#">{`Welcome, ${localStorage.getItem('name')}!`}</Link></li>
+                    <li onClick={props.patientLogin}>
                             <Link
                                 to='/'
                                 className={
