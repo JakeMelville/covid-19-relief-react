@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const session = require("express-session");
 const morgan = require("morgan");
-const MongoStore = require("connect-mongo")(session);
+const MongoStore = require("connect-mongo");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
@@ -21,8 +21,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(
   session({
     secret: "super secret",
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection
+    store: MongoStore.create ({ mongoUrl: "mongodb://localhost/covid-relief"
     }),
     resave: false,
     saveUninitialized: false

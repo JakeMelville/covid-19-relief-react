@@ -1,4 +1,4 @@
-const db = require("../models/Patients");
+const db = require("../models");
 const local = require("passport-local").Strategy;
 
 const storage = new local(

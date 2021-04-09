@@ -30,10 +30,11 @@ PatientSchema.methods = {
     return bcrypt.hashSync(plainTextPassword, 10)
   }
 }
-
-PatientSchema.pre("save", (next) => {
+// refactor code to work using bcrpyt in mongoose
+PatientSchema.pre("save", true, (next) => {
+  console.log("this is patient schema.pre: ", this)
   if (!this.password) {
-    console.log("no passowrd!")
+    console.log("no password!")
     next()
   } else {
     console.log("pre saved");
