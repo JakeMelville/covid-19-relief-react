@@ -2,7 +2,6 @@
   "name": "covid-19-relief",
   "version": "0.1.0",
   "main": "server.js",
-  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -10,8 +9,8 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "ejs": "3.1.6",
     "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -20,42 +19,34 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
-    "is-empty": "^1.2.0",
-    "jsonwebtoken": "^8.3.0",
+    "connect-mongo": "4.4.1",
+    "cookie-parser": "1.4.5",
+    "debug": "4.3.1",
+    "dotenv": "8.2.0",
     "mongoose": "^5.3.11",
+    "morgan": "1.10.0",
+    "multer": "1.4.2",
+    "nodemailer": "6.5.0",
+    "nodemon": "2.0.7",
     "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
+    "passport-local": "1.0.0",
     "validator": "^10.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "server": "nodemon server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeMelville/covid-19-relief-react"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "css-loader": "^5.2.0",
-    "style-loader": "^2.0.0"
-  }
+  "keywords": [],
+    "author": "",
+    "license": "ISC"
 }

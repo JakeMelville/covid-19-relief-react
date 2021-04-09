@@ -1,8 +1,8 @@
 {
   "name": "covid-19-relief",
   "version": "0.1.0",
-  "main": "server.js",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -11,15 +11,19 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.18.0",
-    "classnames": "^2.2.6",
-    "jwt-decode": "^2.2.0",
+    "express": "4.17.1",
+    "express-session": "1.17.1",
+    "http-proxy-middleware": "1.1.0",
+    "jquery": "3.6.0",
+    "mongoose": "5.12.3",
+    "nodemailer": "6.5.0",
+    "passport": "0.4.1",
+    "passport-local": "1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "react-scripts": "2.1.1"
 },
 
   "scripts": {
@@ -28,7 +32,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3000",
   "eslintConfig": {
     "extends": "react-app"
   },
