@@ -21,7 +21,7 @@
                     <h2 className="p-5">WELCOME BACK!</h2>
                     <img className="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card cap" />
                 </div>
-                <form noValidate onSubmit={this.onSubmit} id="login-form" className="card-body" method="post" action="/api/patient/login">
+                <form id="login-form" className="card-body" method="post" action="/api/patient/login">
                     <div className="form-group">
                         <label htmlFor="username-input-login" className="control-label col-sm font-weight-bold">Username</label>
                         <input type="text" id="email" onChange={props.handleInputChange} className="validate"  name="email" placeholder="EMAIL" />

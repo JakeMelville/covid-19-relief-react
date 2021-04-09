@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
-// import Modal from "..";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import Login from "../components/Login/login";
+import Nav from '../components/Nav';
 
 
 class Login extends React.Component {
@@ -24,15 +25,9 @@ class Login extends React.Component {
                 window.location.replace("/")
             });
         })
-        // .catch((error) => {
-        //     info.handleModal();
-        // });
-    }
 
-    handleModal = () => {
-        this.setState({ visible: true })
     }
-
+    
     handleInputChange = e => {
         const name = e.target.name;
         const value = e.target.value;
@@ -63,6 +58,26 @@ class Login extends React.Component {
             this.setState({ email: "", loggedIn: "false", userID: ""});
         }
     }
+
+    render() {
+        return (
+            <div>
+                <Nav
+                    loggedIn={this.state.loggedIn}
+                    patientLogin={this.patientLogin}>
+                </Nav>
+                <Login
+                handleInputChange={this.handleInputChange}
+                login={this.login}
+                bypassLogin={this.bypassLogin}
+                handleFormSubmit={this.handleFormSubmit}>
+                </Login>
+            </div>
+        )
+    }
+}
+
+export default Login;
 
 
     // onChange = e => {
@@ -127,6 +142,4 @@ class Login extends React.Component {
 // }
 // }
 
-export default Login;
- 
 
