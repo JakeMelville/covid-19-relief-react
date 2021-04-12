@@ -6,6 +6,7 @@ import ProviderCard from '../components/ProviderCard/index.js'
 import API from '../utils/API';
 
 function VaccineFinder() {
+
     const [vaccineState, setVaccineState] = useState('')
 
     const [nameState, setNameState] = useState('')
@@ -90,27 +91,87 @@ function VaccineFinder() {
     const [num19Locations, setNum19Locations] = useState('')
 
 
-
+    function hideCards() {
+        if (brandState === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand1State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand2State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand3State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand4State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand5State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand6State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand7State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand8State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand9State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand10State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand11State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand12State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand13State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand14State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand15State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand16State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand17State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand18State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+        if (brand19State === '') {
+            document.getElementById('#brandNameCard').style.display = 'none'
+        }
+    }
 
     function resetForm() {
         this.setState(this.baseState);
-        // document.getElementById('submitBtn').style.display = 'block'
-
     }
 
     function handleSubmit(event) {
         event.preventDefault();
+        // hideCards()
         document.getElementById('submitBtn').style.display = 'none'
         document.getElementById('resetBtn').style.display = 'block'
         document.getElementById('inputForm').style.display = 'none'
         document.getElementById('headerBrands').style.display = 'none'
-        
+
 
 
 
         API.getVaccineSites()
             .then(res => {
-
+                console.log(res.data);
                 switch (vaccineState) {
                     case 'AL':
                         setNameState(res.data[0].name)
@@ -189,23 +250,454 @@ function VaccineFinder() {
 
                         return;
                     case 'AZ':
-                        return console.log(res.data[2]);
+                        setNameState(res.data[2].name)
+
+                        setBrandState(res.data[2].provider_brands[0].name)
+                        setBrandWebsite(res.data[2].provider_brands[0].url)
+                        setNumLocations(res.data[2].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[2].provider_brands[1].name)
+                        setBrand1Website(res.data[2].provider_brands[1].url)
+                        setNum1Locations(res.data[2].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[2].provider_brands[2].name)
+                        setBrand2Website(res.data[2].provider_brands[2].url)
+                        setNum2Locations(res.data[2].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[2].provider_brands[3].name)
+                        setBrand3Website(res.data[2].provider_brands[3].url)
+                        setNum3Locations(res.data[2].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[2].provider_brands[4].name)
+                        setBrand4Website(res.data[2].provider_brands[4].url)
+                        setNum4Locations(res.data[2].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[2].provider_brands[5].name)
+                        setBrand5Website(res.data[2].provider_brands[5].url)
+                        setNum5Locations(res.data[2].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[2].provider_brands[6].name)
+                        setBrand6Website(res.data[2].provider_brands[6].url)
+                        setNum6Locations(res.data[2].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[2].provider_brands[7].name)
+                        setBrand7Website(res.data[2].provider_brands[7].url)
+                        setNum7Locations(res.data[2].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[2].provider_brands[8].name)
+                        setBrand8Website(res.data[2].provider_brands[8].url)
+                        setNum8Locations(res.data[2].provider_brands[8].location_count)
+
+                        setBrand9State(res.data[2].provider_brands[9].name)
+                        setBrand9Website(res.data[2].provider_brands[9].url)
+                        setNum9Locations(res.data[2].provider_brands[9].location_count)
+
+                        setBrand10State(res.data[2].provider_brands[10].name)
+                        setBrand10Website(res.data[2].provider_brands[10].url)
+                        setNum10Locations(res.data[2].provider_brands[10].location_count)
+
+                        setBrand11State(res.data[2].provider_brands[11].name)
+                        setBrand11Website(res.data[2].provider_brands[11].url)
+                        setNum11Locations(res.data[2].provider_brands[11].location_count)
+
+                        setBrand12State(res.data[2].provider_brands[12].name)
+                        setBrand12Website(res.data[2].provider_brands[12].url)
+                        setNum12Locations(res.data[2].provider_brands[12].location_count)
+                        return
                     case 'AR':
-                        return console.log(res.data[3]);
+                        setNameState(res.data[3].name)
+
+                        setBrandState(res.data[3].provider_brands[0].name)
+                        setBrandWebsite(res.data[3].provider_brands[0].url)
+                        setNumLocations(res.data[3].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[3].provider_brands[1].name)
+                        setBrand1Website(res.data[3].provider_brands[1].url)
+                        setNum1Locations(res.data[3].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[3].provider_brands[2].name)
+                        setBrand2Website(res.data[3].provider_brands[2].url)
+                        setNum2Locations(res.data[3].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[3].provider_brands[3].name)
+                        setBrand3Website(res.data[3].provider_brands[3].url)
+                        setNum3Locations(res.data[3].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[3].provider_brands[4].name)
+                        setBrand4Website(res.data[3].provider_brands[4].url)
+                        setNum4Locations(res.data[3].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[3].provider_brands[5].name)
+                        setBrand5Website(res.data[3].provider_brands[5].url)
+                        setNum5Locations(res.data[3].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[3].provider_brands[6].name)
+                        setBrand6Website(res.data[3].provider_brands[6].url)
+                        setNum6Locations(res.data[3].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[3].provider_brands[7].name)
+                        setBrand7Website(res.data[3].provider_brands[7].url)
+                        setNum7Locations(res.data[3].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[3].provider_brands[8].name)
+                        setBrand8Website(res.data[3].provider_brands[8].url)
+                        setNum8Locations(res.data[3].provider_brands[8].location_count)
+
+                        setBrand9State(res.data[3].provider_brands[9].name)
+                        setBrand9Website(res.data[3].provider_brands[9].url)
+                        setNum9Locations(res.data[3].provider_brands[9].location_count)
+                        return;
                     case 'CA':
-                        return console.log(res.data[4]);
+                        setNameState(res.data[4].name)
+
+                        setBrandState(res.data[4].provider_brands[0].name)
+                        setBrandWebsite(res.data[4].provider_brands[0].url)
+                        setNumLocations(res.data[4].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[4].provider_brands[1].name)
+                        setBrand1Website(res.data[4].provider_brands[1].url)
+                        setNum1Locations(res.data[4].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[4].provider_brands[2].name)
+                        setBrand2Website(res.data[4].provider_brands[2].url)
+                        setNum2Locations(res.data[4].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[4].provider_brands[3].name)
+                        setBrand3Website(res.data[4].provider_brands[3].url)
+                        setNum3Locations(res.data[4].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[4].provider_brands[4].name)
+                        setBrand4Website(res.data[4].provider_brands[4].url)
+                        setNum4Locations(res.data[4].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[4].provider_brands[5].name)
+                        setBrand5Website(res.data[4].provider_brands[5].url)
+                        setNum5Locations(res.data[4].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[4].provider_brands[6].name)
+                        setBrand6Website(res.data[4].provider_brands[6].url)
+                        setNum6Locations(res.data[4].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[4].provider_brands[7].name)
+                        setBrand7Website(res.data[4].provider_brands[7].url)
+                        setNum7Locations(res.data[4].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[4].provider_brands[8].name)
+                        setBrand8Website(res.data[4].provider_brands[8].url)
+                        setNum8Locations(res.data[4].provider_brands[8].location_count)
+
+                        setBrand9State(res.data[4].provider_brands[9].name)
+                        setBrand9Website(res.data[4].provider_brands[9].url)
+                        setNum9Locations(res.data[4].provider_brands[9].location_count)
+
+                        setBrand10State(res.data[4].provider_brands[10].name)
+                        setBrand10Website(res.data[4].provider_brands[10].url)
+                        setNum10Locations(res.data[4].provider_brands[10].location_count)
+
+                        setBrand11State(res.data[4].provider_brands[11].name)
+                        setBrand11Website(res.data[4].provider_brands[11].url)
+                        setNum11Locations(res.data[4].provider_brands[11].location_count)
+
+                        setBrand12State(res.data[4].provider_brands[12].name)
+                        setBrand12Website(res.data[4].provider_brands[12].url)
+                        setNum12Locations(res.data[4].provider_brands[12].location_count)
+
+                        setBrand13State(res.data[4].provider_brands[13].name)
+                        setBrand13Website(res.data[4].provider_brands[13].url)
+                        setNum13Locations(res.data[4].provider_brands[13].location_count)
+
+                        setBrand14State(res.data[4].provider_brands[14].name)
+                        setBrand14Website(res.data[4].provider_brands[14].url)
+                        setNum14Locations(res.data[4].provider_brands[14].location_count)
+
+                        setBrand15State(res.data[4].provider_brands[15].name)
+                        setBrand15Website(res.data[4].provider_brands[15].url)
+                        setNum15Locations(res.data[4].provider_brands[15].location_count)
+
+                        setBrand16State(res.data[4].provider_brands[16].name)
+                        setBrand16Website(res.data[4].provider_brands[16].url)
+                        setNum16Locations(res.data[4].provider_brands[16].location_count)
+
+                        setBrand17State(res.data[4].provider_brands[17].name)
+                        setBrand17Website(res.data[4].provider_brands[17].url)
+                        setNum17Locations(res.data[4].provider_brands[17].location_count)
+
+                        setBrand18State(res.data[4].provider_brands[18].name)
+                        setBrand18Website(res.data[4].provider_brands[18].url)
+                        setNum18Locations(res.data[4].provider_brands[18].location_count)
+                        return;
                     case 'CO':
-                        return console.log(res.data[5]);
+                        setNameState(res.data[5].name)
+
+                        setBrandState(res.data[5].provider_brands[0].name)
+                        setBrandWebsite(res.data[5].provider_brands[0].url)
+                        setNumLocations(res.data[5].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[5].provider_brands[1].name)
+                        setBrand1Website(res.data[5].provider_brands[1].url)
+                        setNum1Locations(res.data[5].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[5].provider_brands[2].name)
+                        setBrand2Website(res.data[5].provider_brands[2].url)
+                        setNum2Locations(res.data[5].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[5].provider_brands[3].name)
+                        setBrand3Website(res.data[5].provider_brands[3].url)
+                        setNum3Locations(res.data[5].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[5].provider_brands[4].name)
+                        setBrand4Website(res.data[5].provider_brands[4].url)
+                        setNum4Locations(res.data[5].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[5].provider_brands[5].name)
+                        setBrand5Website(res.data[5].provider_brands[5].url)
+                        setNum5Locations(res.data[5].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[5].provider_brands[6].name)
+                        setBrand6Website(res.data[5].provider_brands[6].url)
+                        setNum6Locations(res.data[5].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[5].provider_brands[7].name)
+                        setBrand7Website(res.data[5].provider_brands[7].url)
+                        setNum7Locations(res.data[5].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[5].provider_brands[8].name)
+                        setBrand8Website(res.data[5].provider_brands[8].url)
+                        setNum8Locations(res.data[5].provider_brands[8].location_count)
+
+                        setBrand9State(res.data[5].provider_brands[9].name)
+                        setBrand9Website(res.data[5].provider_brands[9].url)
+                        setNum9Locations(res.data[5].provider_brands[9].location_count)
+
+                        setBrand10State(res.data[5].provider_brands[10].name)
+                        setBrand10Website(res.data[5].provider_brands[10].url)
+                        setNum10Locations(res.data[5].provider_brands[10].location_count)
+
+                        setBrand11State(res.data[5].provider_brands[11].name)
+                        setBrand11Website(res.data[5].provider_brands[11].url)
+                        setNum11Locations(res.data[5].provider_brands[11].location_count)
+
+                        setBrand12State(res.data[5].provider_brands[12].name)
+                        setBrand12Website(res.data[5].provider_brands[12].url)
+                        setNum12Locations(res.data[5].provider_brands[12].location_count)
+
+                        setBrand13State(res.data[5].provider_brands[13].name)
+                        setBrand13Website(res.data[5].provider_brands[13].url)
+                        setNum13Locations(res.data[5].provider_brands[13].location_count)
+
+                        setBrand14State(res.data[5].provider_brands[14].name)
+                        setBrand14Website(res.data[5].provider_brands[14].url)
+                        setNum14Locations(res.data[5].provider_brands[14].location_count)
+
+                        setBrand15State(res.data[5].provider_brands[15].name)
+                        setBrand15Website(res.data[5].provider_brands[15].url)
+                        setNum15Locations(res.data[5].provider_brands[15].location_count)
+                        return;
                     case 'CT':
-                        return console.log(res.data[6]);
+                        setNameState(res.data[6].name)
+
+                        setBrandState(res.data[6].provider_brands[0].name)
+                        setBrandWebsite(res.data[6].provider_brands[0].url)
+                        setNumLocations(res.data[6].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[6].provider_brands[1].name)
+                        setBrand1Website(res.data[6].provider_brands[1].url)
+                        setNum1Locations(res.data[6].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[6].provider_brands[2].name)
+                        setBrand2Website(res.data[6].provider_brands[2].url)
+                        setNum2Locations(res.data[6].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[6].provider_brands[3].name)
+                        setBrand3Website(res.data[6].provider_brands[3].url)
+                        setNum3Locations(res.data[6].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[6].provider_brands[4].name)
+                        setBrand4Website(res.data[6].provider_brands[4].url)
+                        setNum4Locations(res.data[6].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[6].provider_brands[5].name)
+                        setBrand5Website(res.data[6].provider_brands[5].url)
+                        setNum5Locations(res.data[6].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[6].provider_brands[6].name)
+                        setBrand6Website(res.data[6].provider_brands[6].url)
+                        setNum6Locations(res.data[6].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[6].provider_brands[7].name)
+                        setBrand7Website(res.data[6].provider_brands[7].url)
+                        setNum7Locations(res.data[6].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[6].provider_brands[8].name)
+                        setBrand8Website(res.data[6].provider_brands[8].url)
+                        setNum8Locations(res.data[6].provider_brands[8].location_count)
+                        return;
                     case 'DE':
-                        return console.log(res.data[7]);
+                        setNameState(res.data[7].name)
+
+                        setBrandState(res.data[7].provider_brands[0].name)
+                        setBrandWebsite(res.data[7].provider_brands[0].url)
+                        setNumLocations(res.data[7].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[7].provider_brands[1].name)
+                        setBrand1Website(res.data[7].provider_brands[1].url)
+                        setNum1Locations(res.data[7].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[7].provider_brands[2].name)
+                        setBrand2Website(res.data[7].provider_brands[2].url)
+                        setNum2Locations(res.data[7].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[7].provider_brands[3].name)
+                        setBrand3Website(res.data[7].provider_brands[3].url)
+                        setNum3Locations(res.data[7].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[7].provider_brands[4].name)
+                        setBrand4Website(res.data[7].provider_brands[4].url)
+                        setNum4Locations(res.data[7].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[7].provider_brands[5].name)
+                        setBrand5Website(res.data[7].provider_brands[5].url)
+                        setNum5Locations(res.data[7].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[7].provider_brands[6].name)
+                        setBrand6Website(res.data[7].provider_brands[6].url)
+                        setNum6Locations(res.data[7].provider_brands[6].location_count)
+                        return;
                     case 'DC':
-                        return console.log(res.data[8]);
+                        setNameState(res.data[8].name)
+
+                        setBrandState(res.data[8].provider_brands[0].name)
+                        setBrandWebsite(res.data[8].provider_brands[0].url)
+                        setNumLocations(res.data[8].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[8].provider_brands[1].name)
+                        setBrand1Website(res.data[8].provider_brands[1].url)
+                        setNum1Locations(res.data[8].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[8].provider_brands[2].name)
+                        setBrand2Website(res.data[8].provider_brands[2].url)
+                        setNum2Locations(res.data[8].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[8].provider_brands[3].name)
+                        setBrand3Website(res.data[8].provider_brands[3].url)
+                        setNum3Locations(res.data[8].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[8].provider_brands[4].name)
+                        setBrand4Website(res.data[8].provider_brands[4].url)
+                        setNum4Locations(res.data[8].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[8].provider_brands[5].name)
+                        setBrand5Website(res.data[8].provider_brands[5].url)
+                        setNum5Locations(res.data[8].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[8].provider_brands[6].name)
+                        setBrand6Website(res.data[8].provider_brands[6].url)
+                        setNum6Locations(res.data[8].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[8].provider_brands[7].name)
+                        setBrand7Website(res.data[8].provider_brands[7].url)
+                        setNum7Locations(res.data[8].provider_brands[7].location_count)
+
+                        return;
                     case 'FL':
+                        setNameState(res.data[9].name)
+
+                        setBrandState(res.data[9].provider_brands[0].name)
+                        setBrandWebsite(res.data[9].provider_brands[0].url)
+                        setNumLocations(res.data[9].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[9].provider_brands[1].name)
+                        setBrand1Website(res.data[9].provider_brands[1].url)
+                        setNum1Locations(res.data[9].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[9].provider_brands[2].name)
+                        setBrand2Website(res.data[9].provider_brands[2].url)
+                        setNum2Locations(res.data[9].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[9].provider_brands[3].name)
+                        setBrand3Website(res.data[9].provider_brands[3].url)
+                        setNum3Locations(res.data[9].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[9].provider_brands[4].name)
+                        setBrand4Website(res.data[9].provider_brands[4].url)
+                        setNum4Locations(res.data[9].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[9].provider_brands[5].name)
+                        setBrand5Website(res.data[9].provider_brands[5].url)
+                        setNum5Locations(res.data[9].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[9].provider_brands[6].name)
+                        setBrand6Website(res.data[9].provider_brands[6].url)
+                        setNum6Locations(res.data[9].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[9].provider_brands[7].name)
+                        setBrand7Website(res.data[9].provider_brands[7].url)
+                        setNum7Locations(res.data[9].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[9].provider_brands[8].name)
+                        setBrand8Website(res.data[9].provider_brands[8].url)
+                        setNum8Locations(res.data[9].provider_brands[8].location_count)
+
+                        setBrand9State(res.data[9].provider_brands[9].name)
+                        setBrand9Website(res.data[9].provider_brands[9].url)
+                        setNum9Locations(res.data[9].provider_brands[9].location_count)
+
+                        setBrand10State(res.data[9].provider_brands[10].name)
+                        setBrand10Website(res.data[9].provider_brands[10].url)
+                        setNum10Locations(res.data[9].provider_brands[10].location_count)
+
+                        setBrand11State(res.data[9].provider_brands[11].name)
+                        setBrand11Website(res.data[9].provider_brands[11].url)
+                        setNum11Locations(res.data[9].provider_brands[11].location_count)
                         return console.log(res.data[9]);
                     case 'GA':
-                        return console.log(res.data[10]);
+                        setNameState(res.data[10].name)
+
+                        setBrandState(res.data[10].provider_brands[0].name)
+                        setBrandWebsite(res.data[10].provider_brands[0].url)
+                        setNumLocations(res.data[10].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[10].provider_brands[1].name)
+                        setBrand1Website(res.data[10].provider_brands[1].url)
+                        setNum1Locations(res.data[10].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[10].provider_brands[2].name)
+                        setBrand2Website(res.data[10].provider_brands[2].url)
+                        setNum2Locations(res.data[10].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[10].provider_brands[3].name)
+                        setBrand3Website(res.data[10].provider_brands[3].url)
+                        setNum3Locations(res.data[10].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[10].provider_brands[4].name)
+                        setBrand4Website(res.data[10].provider_brands[4].url)
+                        setNum4Locations(res.data[10].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[10].provider_brands[5].name)
+                        setBrand5Website(res.data[10].provider_brands[5].url)
+                        setNum5Locations(res.data[10].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[10].provider_brands[6].name)
+                        setBrand6Website(res.data[10].provider_brands[6].url)
+                        setNum6Locations(res.data[10].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[10].provider_brands[7].name)
+                        setBrand7Website(res.data[10].provider_brands[7].url)
+                        setNum7Locations(res.data[10].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[10].provider_brands[8].name)
+                        setBrand8Website(res.data[10].provider_brands[8].url)
+                        setNum8Locations(res.data[10].provider_brands[8].location_count)
+
+                        setBrand9State(res.data[10].provider_brands[9].name)
+                        setBrand9Website(res.data[10].provider_brands[9].url)
+                        setNum9Locations(res.data[10].provider_brands[9].location_count)
+
+                        setBrand10State(res.data[10].provider_brands[10].name)
+                        setBrand10Website(res.data[10].provider_brands[10].url)
+                        setNum10Locations(res.data[10].provider_brands[10].location_count)
+                        
+                        return;
                     case 'HI':
                         return console.log(res.data[11]);
                     case 'ID':
@@ -293,8 +785,6 @@ function VaccineFinder() {
                     case 'wy':
                         return console.log(res.data[53]);
                 }
-
-
             })
     }
 
@@ -311,6 +801,7 @@ function VaccineFinder() {
                 setVaccineState={setVaccineState}
                 handleSubmit={handleSubmit}
                 resetForm={resetForm}
+                hideCards={hideCards}
             />
             <ProviderCard
                 nameState={nameState}
