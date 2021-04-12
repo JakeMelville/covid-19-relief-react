@@ -14,6 +14,12 @@ export default {
       `https://discover.search.hereapi.com/v1/discover?apikey=2E2hXtlLTixuNk2K6LWH7tzmKtQscKlf74M2DC_PX4A&q=Covid&at=${locate}&limit=5`
     );
   },
+  getVaccineSites: function (dropDown) {
+    console.log('getvaccinesites', dropDown);
+    return axios.get(
+      `https://www.vaccinespotter.org/api/v0/states.json`
+    );
+  },
   getPatients: function () {
     return axios.get("/api/patient");
   },
