@@ -92,9 +92,20 @@ function VaccineFinder() {
 
 
 
+    function resetForm() {
+        this.setState(this.baseState);
+        // document.getElementById('submitBtn').style.display = 'block'
+
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
+        document.getElementById('submitBtn').style.display = 'none'
+        document.getElementById('resetBtn').style.display = 'block'
+        document.getElementById('inputForm').style.display = 'none'
+        document.getElementById('headerBrands').style.display = 'none'
+        
+
 
 
         API.getVaccineSites()
@@ -138,8 +149,44 @@ function VaccineFinder() {
 
                         return;
                     case 'AK':
-                        setNameState(res.data[1].name);
+                        setNameState(res.data[1].name)
+
                         setBrandState(res.data[1].provider_brands[0].name)
+                        setBrandWebsite(res.data[1].provider_brands[0].url)
+                        setNumLocations(res.data[1].provider_brands[0].location_count)
+
+                        setBrand1State(res.data[1].provider_brands[1].name)
+                        setBrand1Website(res.data[1].provider_brands[1].url)
+                        setNum1Locations(res.data[1].provider_brands[1].location_count)
+
+                        setBrand2State(res.data[1].provider_brands[2].name)
+                        setBrand2Website(res.data[1].provider_brands[2].url)
+                        setNum2Locations(res.data[1].provider_brands[2].location_count)
+
+                        setBrand3State(res.data[1].provider_brands[3].name)
+                        setBrand3Website(res.data[1].provider_brands[3].url)
+                        setNum3Locations(res.data[1].provider_brands[3].location_count)
+
+                        setBrand4State(res.data[1].provider_brands[4].name)
+                        setBrand4Website(res.data[1].provider_brands[4].url)
+                        setNum4Locations(res.data[1].provider_brands[4].location_count)
+
+                        setBrand5State(res.data[1].provider_brands[5].name)
+                        setBrand5Website(res.data[1].provider_brands[5].url)
+                        setNum5Locations(res.data[1].provider_brands[5].location_count)
+
+                        setBrand6State(res.data[1].provider_brands[6].name)
+                        setBrand6Website(res.data[1].provider_brands[6].url)
+                        setNum6Locations(res.data[1].provider_brands[6].location_count)
+
+                        setBrand7State(res.data[1].provider_brands[7].name)
+                        setBrand7Website(res.data[1].provider_brands[7].url)
+                        setNum7Locations(res.data[1].provider_brands[7].location_count)
+
+                        setBrand8State(res.data[1].provider_brands[8].name)
+                        setBrand8Website(res.data[1].provider_brands[8].url)
+                        setNum8Locations(res.data[1].provider_brands[8].location_count)
+
                         return;
                     case 'AZ':
                         return console.log(res.data[2]);
@@ -263,6 +310,7 @@ function VaccineFinder() {
                 vaccineState={vaccineState}
                 setVaccineState={setVaccineState}
                 handleSubmit={handleSubmit}
+                resetForm={resetForm}
             />
             <ProviderCard
                 nameState={nameState}
@@ -282,6 +330,69 @@ function VaccineFinder() {
                 brand3Website={brand3Website}
                 num3Locations={num3Locations}
 
+                brand4State={brand4State}
+                brand4Website={brand4Website}
+                num4Locations={num4Locations}
+
+                brand5State={brand5State}
+                brand5Website={brand5Website}
+                num5Locations={num5Locations}
+
+                brand6State={brand6State}
+                brand6Website={brand6Website}
+                num6Locations={num6Locations}
+
+                brand7State={brand7State}
+                brand7Website={brand7Website}
+                num7Locations={num7Locations}
+
+                brand8State={brand8State}
+                brand8Website={brand8Website}
+                num8Locations={num8Locations}
+
+                brand9State={brand9State}
+                brand9Website={brand9Website}
+                num9Locations={num9Locations}
+
+                brand10State={brand10State}
+                brand10Website={brand10Website}
+                num10Locations={num10Locations}
+
+                brand11State={brand11State}
+                brand11Website={brand11Website}
+                num11Locations={num11Locations}
+
+                brand12State={brand12State}
+                brand12Website={brand12Website}
+                num12Locations={num12Locations}
+
+                brand13State={brand13State}
+                brand13Website={brand13Website}
+                num13Locations={num13Locations}
+
+                brand14State={brand14State}
+                brand14Website={brand14Website}
+                num14Locations={num14Locations}
+
+                brand15State={brand15State}
+                brand15Website={brand15Website}
+                num15Locations={num15Locations}
+
+                brand16State={brand16State}
+                brand16Website={brand16Website}
+                num16Locations={num16Locations}
+
+                brand17State={brand17State}
+                brand17Website={brand17Website}
+                num17Locations={num17Locations}
+
+                brand18State={brand18State}
+                brand18Website={brand18Website}
+                num18Locations={num18Locations}
+
+                brand19State={brand19State}
+                brand19Website={brand19Website}
+                num19Locations={num19Locations}
 
             />
         </div>

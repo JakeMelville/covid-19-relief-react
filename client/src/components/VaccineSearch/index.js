@@ -1,10 +1,11 @@
 import React from 'react';
+import './style.css'
 
 function VaccineSearch(props) {
     return (
         <div className="container w-100 m-0 p-">
             <div className="row w-100 m-0">
-                <h2 className="col-12 text-center">Vaccine Provider Brands</h2>
+                <h2 id='headerBrands' className="col-12 text-center">Vaccine Provider Brands</h2>
                 <form id="inputForm" className="col-12 text-center pb-3" onSubmit={props.handleSubmit}>
                     <select name='state' value={props.vaccineState} onChange={(e) => props.setVaccineState(e.target.value)}>
                         <option value='AL'>AL</option>
@@ -65,6 +66,11 @@ function VaccineSearch(props) {
                     </select>
                     <button id="submitBtn" className='btn-primary' type='submit'>Submit</button>
                 </form>
+                <div className='col-text-center'>
+                    <form onSubmit={props.resetForm}>
+                        <button id='resetBtn' type='submit' className='btn btn-primary'>Reset Search</button>
+                    </form>
+                </div>
             </div>
         </div>
     )
