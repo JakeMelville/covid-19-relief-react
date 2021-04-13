@@ -1,9 +1,8 @@
 #widget { 
-    margin: 0 auto;
+    margin: auto;
     align-items: center;
 }
 
 #vaccineContainer {
-    height: 100vh;
-    justify-content: center;
+    justify-content: right;
 }
