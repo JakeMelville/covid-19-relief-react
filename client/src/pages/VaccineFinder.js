@@ -86,73 +86,7 @@ function VaccineFinder() {
     const [brand18Website, setBrand18Website] = useState('')
     const [num18Locations, setNum18Locations] = useState('')
 
-    const [brand19State, setBrand19State] = useState('')
-    const [brand19Website, setBrand19Website] = useState('')
-    const [num19Locations, setNum19Locations] = useState('')
 
-
-    function hideCards() {
-        if (brandState === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand1State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand2State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand3State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand4State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand5State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand6State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand7State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand8State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand9State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand10State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand11State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand12State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand13State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand14State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand15State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand16State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand17State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand18State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-        if (brand19State === '') {
-            document.getElementById('#brandNameCard').style.display = 'none'
-        }
-    }
 
     function resetForm() {
         this.setState(this.baseState);
@@ -160,7 +94,6 @@ function VaccineFinder() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        // hideCards()
         document.getElementById('submitBtn').style.display = 'none'
         document.getElementById('resetBtn').style.display = 'block'
         document.getElementById('inputForm').style.display = 'none'
@@ -168,10 +101,10 @@ function VaccineFinder() {
 
 
 
-
         API.getVaccineSites()
             .then(res => {
-                console.log(res.data);
+                console.log(res.data)
+
                 switch (vaccineState) {
                     case 'AL':
                         setNameState(res.data[0].name)
@@ -208,8 +141,14 @@ function VaccineFinder() {
                         setBrand7Website(res.data[0].provider_brands[7].url)
                         setNum7Locations(res.data[0].provider_brands[7].location_count)
 
+                        for (var i = 0; i < 7; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+
+
                         return;
                     case 'AK':
+
                         setNameState(res.data[1].name)
 
                         setBrandState(res.data[1].provider_brands[0].name)
@@ -247,6 +186,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[1].provider_brands[8].name)
                         setBrand8Website(res.data[1].provider_brands[8].url)
                         setNum8Locations(res.data[1].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
 
                         return;
                     case 'AZ':
@@ -303,6 +246,10 @@ function VaccineFinder() {
                         setBrand12State(res.data[2].provider_brands[12].name)
                         setBrand12Website(res.data[2].provider_brands[12].url)
                         setNum12Locations(res.data[2].provider_brands[12].location_count)
+
+                        for (var i = 0; i < 13; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return
                     case 'AR':
                         setNameState(res.data[3].name)
@@ -346,6 +293,10 @@ function VaccineFinder() {
                         setBrand9State(res.data[3].provider_brands[9].name)
                         setBrand9Website(res.data[3].provider_brands[9].url)
                         setNum9Locations(res.data[3].provider_brands[9].location_count)
+
+                        for (var i = 0; i < 10; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'CA':
                         setNameState(res.data[4].name)
@@ -425,6 +376,10 @@ function VaccineFinder() {
                         setBrand18State(res.data[4].provider_brands[18].name)
                         setBrand18Website(res.data[4].provider_brands[18].url)
                         setNum18Locations(res.data[4].provider_brands[18].location_count)
+
+                        for (var i = 0; i < 19; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'CO':
                         setNameState(res.data[5].name)
@@ -492,6 +447,10 @@ function VaccineFinder() {
                         setBrand15State(res.data[5].provider_brands[15].name)
                         setBrand15Website(res.data[5].provider_brands[15].url)
                         setNum15Locations(res.data[5].provider_brands[15].location_count)
+
+                        for (var i = 0; i < 16; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'CT':
                         setNameState(res.data[6].name)
@@ -531,6 +490,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[6].provider_brands[8].name)
                         setBrand8Website(res.data[6].provider_brands[8].url)
                         setNum8Locations(res.data[6].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'DE':
                         setNameState(res.data[7].name)
@@ -562,6 +525,10 @@ function VaccineFinder() {
                         setBrand6State(res.data[7].provider_brands[6].name)
                         setBrand6Website(res.data[7].provider_brands[6].url)
                         setNum6Locations(res.data[7].provider_brands[6].location_count)
+
+                        for (var i = 0; i < 7; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'DC':
                         setNameState(res.data[8].name)
@@ -597,6 +564,10 @@ function VaccineFinder() {
                         setBrand7State(res.data[8].provider_brands[7].name)
                         setBrand7Website(res.data[8].provider_brands[7].url)
                         setNum7Locations(res.data[8].provider_brands[7].location_count)
+
+                        for (var i = 0; i < 8; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
 
                         return;
                     case 'FL':
@@ -649,7 +620,11 @@ function VaccineFinder() {
                         setBrand11State(res.data[9].provider_brands[11].name)
                         setBrand11Website(res.data[9].provider_brands[11].url)
                         setNum11Locations(res.data[9].provider_brands[11].location_count)
-                        return console.log(res.data[9]);
+
+                        for (var i = 0; i < 12; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+                        return;
                     case 'GA':
                         setNameState(res.data[10].name)
 
@@ -697,6 +672,10 @@ function VaccineFinder() {
                         setBrand10Website(res.data[10].provider_brands[10].url)
                         setNum10Locations(res.data[10].provider_brands[10].location_count)
 
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+
                         return;
                     case 'HI':
                         setNameState(res.data[11].name)
@@ -728,6 +707,10 @@ function VaccineFinder() {
                         setBrand6State(res.data[11].provider_brands[6].name)
                         setBrand6Website(res.data[11].provider_brands[6].url)
                         setNum6Locations(res.data[11].provider_brands[6].location_count)
+
+                        for (var i = 0; i < 7; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
 
                         return;
                     case 'ID':
@@ -768,6 +751,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[12].provider_brands[8].name)
                         setBrand8Website(res.data[12].provider_brands[8].url)
                         setNum8Locations(res.data[12].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
 
                         return;
                     case 'IL':
@@ -926,6 +913,10 @@ function VaccineFinder() {
                         setBrand9State(res.data[15].provider_brands[9].name)
                         setBrand9Website(res.data[15].provider_brands[9].url)
                         setNum9Locations(res.data[15].provider_brands[9].location_count)
+
+                        for (var i = 0; i < 10; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'KS':
                         setNameState(res.data[16].name)
@@ -978,6 +969,10 @@ function VaccineFinder() {
                         setBrand11Website(res.data[16].provider_brands[11].url)
                         setNum11Locations(res.data[16].provider_brands[11].location_count)
 
+                        for (var i = 0; i < 12; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+
                         return;
                     case 'KY':
                         setNameState(res.data[17].name)
@@ -1026,6 +1021,10 @@ function VaccineFinder() {
                         setBrand10Website(res.data[17].provider_brands[10].url)
                         setNum10Locations(res.data[17].provider_brands[10].location_count)
 
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+
                         return;
                     case 'LA':
                         setNameState(res.data[18].name)
@@ -1069,6 +1068,10 @@ function VaccineFinder() {
                         setBrand9State(res.data[18].provider_brands[9].name)
                         setBrand9Website(res.data[18].provider_brands[9].url)
                         setNum9Locations(res.data[18].provider_brands[9].location_count)
+
+                        for (var i = 0; i < 10; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'ME':
                         setNameState(res.data[19].name)
@@ -1092,6 +1095,10 @@ function VaccineFinder() {
                         setBrand4State(res.data[19].provider_brands[4].name)
                         setBrand4Website(res.data[19].provider_brands[4].url)
                         setNum4Locations(res.data[19].provider_brands[4].location_count)
+
+                        for (var i = 0; i < 5; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'MH':
                         return console.log(res.data[20]);
@@ -1141,7 +1148,11 @@ function VaccineFinder() {
                         setBrand10State(res.data[21].provider_brands[10].name)
                         setBrand10Website(res.data[21].provider_brands[10].url)
                         setNum10Locations(res.data[21].provider_brands[10].location_count)
-                        return console.log(res.data[21]);
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+                        return;
                     case 'MA':
                         setNameState(res.data[22].name)
 
@@ -1188,6 +1199,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[22].provider_brands[10].name)
                         setBrand10Website(res.data[22].provider_brands[10].url)
                         setNum10Locations(res.data[22].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'MI':
                         setNameState(res.data[23].name)
@@ -1235,6 +1250,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[23].provider_brands[10].name)
                         setBrand10Website(res.data[23].provider_brands[10].url)
                         setNum10Locations(res.data[23].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'MN':
                         setNameState(res.data[24].name)
@@ -1274,6 +1293,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[24].provider_brands[8].name)
                         setBrand8Website(res.data[24].provider_brands[8].url)
                         setNum8Locations(res.data[24].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'MS':
                         setNameState(res.data[25].name)
@@ -1321,6 +1344,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[25].provider_brands[10].name)
                         setBrand10Website(res.data[25].provider_brands[10].url)
                         setNum10Locations(res.data[25].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'MO':
                         setNameState(res.data[26].name)
@@ -1396,6 +1423,10 @@ function VaccineFinder() {
                         setBrand17State(res.data[26].provider_brands[17].name)
                         setBrand17Website(res.data[26].provider_brands[17].url)
                         setNum17Locations(res.data[26].provider_brands[17].location_count)
+
+                        for (var i = 0; i < 18; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'MT':
                         setNameState(res.data[27].name)
@@ -1439,6 +1470,10 @@ function VaccineFinder() {
                         setBrand9State(res.data[27].provider_brands[9].name)
                         setBrand9Website(res.data[27].provider_brands[9].url)
                         setNum9Locations(res.data[27].provider_brands[9].location_count)
+
+                        for (var i = 0; i < 10; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NE':
                         setNameState(res.data[28].name)
@@ -1474,6 +1509,10 @@ function VaccineFinder() {
                         setBrand7State(res.data[28].provider_brands[7].name)
                         setBrand7Website(res.data[28].provider_brands[7].url)
                         setNum7Locations(res.data[28].provider_brands[7].location_count)
+
+                        for (var i = 0; i < 8; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NV':
                         setNameState(res.data[29].name)
@@ -1525,6 +1564,10 @@ function VaccineFinder() {
                         setBrand11State(res.data[29].provider_brands[11].name)
                         setBrand11Website(res.data[29].provider_brands[11].url)
                         setNum11Locations(res.data[29].provider_brands[11].location_count)
+
+                        for (var i = 0; i < 12; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NH':
                         setNameState(res.data[30].name)
@@ -1560,6 +1603,10 @@ function VaccineFinder() {
                         setBrand7State(res.data[30].provider_brands[7].name)
                         setBrand7Website(res.data[30].provider_brands[7].url)
                         setNum7Locations(res.data[30].provider_brands[7].location_count)
+
+                        for (var i = 0; i < 8; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NJ':
                         setNameState(res.data[31].name)
@@ -1607,6 +1654,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[31].provider_brands[10].name)
                         setBrand10Website(res.data[31].provider_brands[10].url)
                         setNum10Locations(res.data[31].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NM':
                         setNameState(res.data[32].name)
@@ -1662,6 +1713,10 @@ function VaccineFinder() {
                         setBrand12State(res.data[32].provider_brands[12].name)
                         setBrand12Website(res.data[32].provider_brands[12].url)
                         setNum12Locations(res.data[32].provider_brands[12].location_count)
+
+                        for (var i = 0; i < 13; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NY':
                         setNameState(res.data[33].name)
@@ -1725,6 +1780,10 @@ function VaccineFinder() {
                         setBrand14State(res.data[33].provider_brands[14].name)
                         setBrand14Website(res.data[33].provider_brands[14].url)
                         setNum14Locations(res.data[33].provider_brands[14].location_count)
+
+                        for (var i = 0; i < 15; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'NC':
                         setNameState(res.data[34].name)
@@ -1764,6 +1823,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[34].provider_brands[8].name)
                         setBrand8Website(res.data[34].provider_brands[8].url)
                         setNum8Locations(res.data[34].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'ND':
                         setNameState(res.data[35].name)
@@ -1791,6 +1854,10 @@ function VaccineFinder() {
                         setBrand5State(res.data[35].provider_brands[5].name)
                         setBrand5Website(res.data[35].provider_brands[5].url)
                         setNum5Locations(res.data[35].provider_brands[5].location_count)
+
+                        for (var i = 0; i < 6; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'OH':
                         setNameState(res.data[36].name)
@@ -1838,6 +1905,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[36].provider_brands[10].name)
                         setBrand10Website(res.data[36].provider_brands[10].url)
                         setNum10Locations(res.data[36].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'OK':
                         setNameState(res.data[37].name)
@@ -1877,6 +1948,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[37].provider_brands[8].name)
                         setBrand8Website(res.data[37].provider_brands[8].url)
                         setNum8Locations(res.data[37].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'OR':
                         setNameState(res.data[38].name)
@@ -1932,6 +2007,10 @@ function VaccineFinder() {
                         setBrand12State(res.data[38].provider_brands[12].name)
                         setBrand12Website(res.data[38].provider_brands[12].url)
                         setNum12Locations(res.data[38].provider_brands[12].location_count)
+
+                        for (var i = 0; i < 13; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'PA':
                         setNameState(res.data[39].name)
@@ -1987,6 +2066,10 @@ function VaccineFinder() {
                         setBrand12State(res.data[39].provider_brands[12].name)
                         setBrand12Website(res.data[39].provider_brands[12].url)
                         setNum12Locations(res.data[39].provider_brands[12].location_count)
+
+                        for (var i = 0; i < 13; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'PR':
                         setNameState(res.data[40].name)
@@ -2014,7 +2097,11 @@ function VaccineFinder() {
                         setBrand5State(res.data[40].provider_brands[5].name)
                         setBrand5Website(res.data[40].provider_brands[5].url)
                         setNum5Locations(res.data[40].provider_brands[5].location_count)
-                        return console.log(res.data[40]);
+
+                        for (var i = 0; i < 6; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+                        return;
                     case 'RI':
                         setNameState(res.data[41].name)
 
@@ -2037,6 +2124,10 @@ function VaccineFinder() {
                         setBrand4State(res.data[41].provider_brands[4].name)
                         setBrand4Website(res.data[41].provider_brands[4].url)
                         setNum4Locations(res.data[41].provider_brands[4].location_count)
+
+                        for (var i = 0; i < 5; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'SC':
                         setNameState(res.data[42].name)
@@ -2084,6 +2175,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[42].provider_brands[10].name)
                         setBrand10Website(res.data[42].provider_brands[10].url)
                         setNum10Locations(res.data[42].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'SD':
                         setNameState(res.data[43].name)
@@ -2119,6 +2214,10 @@ function VaccineFinder() {
                         setBrand7State(res.data[43].provider_brands[7].name)
                         setBrand7Website(res.data[43].provider_brands[7].url)
                         setNum7Locations(res.data[43].provider_brands[7].location_count)
+
+                        for (var i = 0; i < 8; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'TN':
                         setNameState(res.data[44].name)
@@ -2158,6 +2257,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[44].provider_brands[8].name)
                         setBrand8Website(res.data[44].provider_brands[8].url)
                         setNum8Locations(res.data[44].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'TX':
                         setNameState(res.data[45].name)
@@ -2233,6 +2336,10 @@ function VaccineFinder() {
                         setBrand17State(res.data[45].provider_brands[17].name)
                         setBrand17Website(res.data[45].provider_brands[17].url)
                         setNum17Locations(res.data[45].provider_brands[17].location_count)
+
+                        for (var i = 0; i < 18; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'VI':
                         setNameState(res.data[46].name)
@@ -2240,6 +2347,10 @@ function VaccineFinder() {
                         setBrandState(res.data[46].provider_brands[0].name)
                         setBrandWebsite(res.data[46].provider_brands[0].url)
                         setNumLocations(res.data[46].provider_brands[0].location_count)
+
+                        for (var i = 0; i < 1; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'UT':
                         setNameState(res.data[47].name)
@@ -2291,6 +2402,10 @@ function VaccineFinder() {
                         setBrand11State(res.data[47].provider_brands[11].name)
                         setBrand11Website(res.data[47].provider_brands[11].url)
                         setNum11Locations(res.data[47].provider_brands[11].location_count)
+
+                        for (var i = 0; i < 12; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'VT':
                         setNameState(res.data[48].name)
@@ -2330,6 +2445,10 @@ function VaccineFinder() {
                         setBrand8State(res.data[48].provider_brands[8].name)
                         setBrand8Website(res.data[48].provider_brands[8].url)
                         setNum8Locations(res.data[48].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'VA':
                         setNameState(res.data[49].name)
@@ -2397,6 +2516,10 @@ function VaccineFinder() {
                         setBrand15State(res.data[49].provider_brands[15].name)
                         setBrand15Website(res.data[49].provider_brands[15].url)
                         setNum15Locations(res.data[49].provider_brands[15].location_count)
+
+                        for (var i = 0; i < 16; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'WA':
                         setNameState(res.data[50].name)
@@ -2452,6 +2575,10 @@ function VaccineFinder() {
                         setBrand12State(res.data[50].provider_brands[12].name)
                         setBrand12Website(res.data[50].provider_brands[12].url)
                         setNum12Locations(res.data[50].provider_brands[12].location_count)
+
+                        for (var i = 0; i < 13; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'WV':
                         setNameState(res.data[51].name)
@@ -2479,6 +2606,10 @@ function VaccineFinder() {
                         setBrand5State(res.data[51].provider_brands[5].name)
                         setBrand5Website(res.data[51].provider_brands[5].url)
                         setNum5Locations(res.data[51].provider_brands[5].location_count)
+
+                        for (var i = 0; i < 6; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'WI':
                         setNameState(res.data[52].name)
@@ -2526,6 +2657,10 @@ function VaccineFinder() {
                         setBrand10State(res.data[52].provider_brands[10].name)
                         setBrand10Website(res.data[52].provider_brands[10].url)
                         setNum10Locations(res.data[52].provider_brands[10].location_count)
+
+                        for (var i = 0; i < 11; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
                         return;
                     case 'WY':
                         setNameState(res.data[53].name)
@@ -2565,109 +2700,117 @@ function VaccineFinder() {
                         setBrand8State(res.data[53].provider_brands[8].name)
                         setBrand8Website(res.data[53].provider_brands[8].url)
                         setNum8Locations(res.data[53].provider_brands[8].location_count)
+
+                        for (var i = 0; i < 9; i++) {
+                            document.getElementById(`brandNameCard${i}`).style.display = 'block';
+                        }
+
                         return;
                 }
+
+
             })
+            .then()
+            .catch(err => console.log(err))
     }
 
-
-    console.log(vaccineState);
-    console.log(nameState);
+    // console.log(vaccineState);
+    // console.log(nameState);
+    // console.log(brandState);
 
     return (
         <div>
-            <Nav />
+            <div className='pic-red'>
+                <Nav />
+                <VaccineSearch
+                    vaccineState={vaccineState}
+                    setVaccineState={setVaccineState}
+                    handleSubmit={handleSubmit}
+                    resetForm={resetForm}
+                />
+                <div className='row'>
+                    <ProviderCard className='col-12'
+                        nameState={nameState}
+                        brandState={brandState}
+                        brandWebsite={brandWebsite}
+                        numLocations={numLocations}
 
-            <VaccineSearch
-                vaccineState={vaccineState}
-                setVaccineState={setVaccineState}
-                handleSubmit={handleSubmit}
-                resetForm={resetForm}
-                hideCards={hideCards}
-            />
-            <ProviderCard
-                nameState={nameState}
-                brandState={brandState}
-                brandWebsite={brandWebsite}
-                numLocations={numLocations}
+                        brand1State={brand1State}
+                        brand1Website={brand1Website}
+                        num1Locations={num1Locations}
 
-                brand1State={brand1State}
-                brand1Website={brand1Website}
-                num1Locations={num1Locations}
+                        brand2State={brand2State}
+                        brand2Website={brand2Website}
+                        num2Locations={num2Locations}
 
-                brand2State={brand2State}
-                brand2Website={brand2Website}
-                num2Locations={num2Locations}
+                        brand3State={brand3State}
+                        brand3Website={brand3Website}
+                        num3Locations={num3Locations}
 
-                brand3State={brand3State}
-                brand3Website={brand3Website}
-                num3Locations={num3Locations}
+                        brand4State={brand4State}
+                        brand4Website={brand4Website}
+                        num4Locations={num4Locations}
 
-                brand4State={brand4State}
-                brand4Website={brand4Website}
-                num4Locations={num4Locations}
+                        brand5State={brand5State}
+                        brand5Website={brand5Website}
+                        num5Locations={num5Locations}
 
-                brand5State={brand5State}
-                brand5Website={brand5Website}
-                num5Locations={num5Locations}
+                        brand6State={brand6State}
+                        brand6Website={brand6Website}
+                        num6Locations={num6Locations}
 
-                brand6State={brand6State}
-                brand6Website={brand6Website}
-                num6Locations={num6Locations}
+                        brand7State={brand7State}
+                        brand7Website={brand7Website}
+                        num7Locations={num7Locations}
 
-                brand7State={brand7State}
-                brand7Website={brand7Website}
-                num7Locations={num7Locations}
+                        brand8State={brand8State}
+                        brand8Website={brand8Website}
+                        num8Locations={num8Locations}
 
-                brand8State={brand8State}
-                brand8Website={brand8Website}
-                num8Locations={num8Locations}
+                        brand9State={brand9State}
+                        brand9Website={brand9Website}
+                        num9Locations={num9Locations}
 
-                brand9State={brand9State}
-                brand9Website={brand9Website}
-                num9Locations={num9Locations}
+                        brand10State={brand10State}
+                        brand10Website={brand10Website}
+                        num10Locations={num10Locations}
 
-                brand10State={brand10State}
-                brand10Website={brand10Website}
-                num10Locations={num10Locations}
+                        brand11State={brand11State}
+                        brand11Website={brand11Website}
+                        num11Locations={num11Locations}
 
-                brand11State={brand11State}
-                brand11Website={brand11Website}
-                num11Locations={num11Locations}
+                        brand12State={brand12State}
+                        brand12Website={brand12Website}
+                        num12Locations={num12Locations}
 
-                brand12State={brand12State}
-                brand12Website={brand12Website}
-                num12Locations={num12Locations}
+                        brand13State={brand13State}
+                        brand13Website={brand13Website}
+                        num13Locations={num13Locations}
 
-                brand13State={brand13State}
-                brand13Website={brand13Website}
-                num13Locations={num13Locations}
+                        brand14State={brand14State}
+                        brand14Website={brand14Website}
+                        num14Locations={num14Locations}
 
-                brand14State={brand14State}
-                brand14Website={brand14Website}
-                num14Locations={num14Locations}
+                        brand15State={brand15State}
+                        brand15Website={brand15Website}
+                        num15Locations={num15Locations}
 
-                brand15State={brand15State}
-                brand15Website={brand15Website}
-                num15Locations={num15Locations}
+                        brand16State={brand16State}
+                        brand16Website={brand16Website}
+                        num16Locations={num16Locations}
 
-                brand16State={brand16State}
-                brand16Website={brand16Website}
-                num16Locations={num16Locations}
+                        brand17State={brand17State}
+                        brand17Website={brand17Website}
+                        num17Locations={num17Locations}
 
-                brand17State={brand17State}
-                brand17Website={brand17Website}
-                num17Locations={num17Locations}
+                        brand18State={brand18State}
+                        brand18Website={brand18Website}
+                        num18Locations={num18Locations}
+                    />
+                    <VaccineFinderWidget className='col-12 justify-content-center'/>
+                </div>
 
-                brand18State={brand18State}
-                brand18Website={brand18Website}
-                num18Locations={num18Locations}
-
-                brand19State={brand19State}
-                brand19Website={brand19Website}
-                num19Locations={num19Locations}
-
-            />
+            </div>
         </div>
     )
 }
