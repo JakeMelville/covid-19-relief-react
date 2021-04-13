@@ -1,4 +1,5 @@
 const PatientModel = require("../models");
+// const { Patient } = require("../models/patient");
 // const db = require("../models");
 // const local = require("passport-local").Strategy;
 

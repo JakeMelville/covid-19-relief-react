@@ -23,7 +23,7 @@ const PatientSchema = new Schema({
 });
 
 PatientSchema.methods.comparePassword = (password, callback) => {
-  bcrypt.compare(password, this.password, (error, isMatch) {
+  bcrypt.compare(password, this.password, (error, isMatch) => {
     if (error) {
       return callback(error)
     } else {
