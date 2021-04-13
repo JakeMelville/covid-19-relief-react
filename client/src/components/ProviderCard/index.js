@@ -1,5 +1,6 @@
 import React from 'react';
-import './style.css'
+import './style.css';
+
 
 function ProviderCard(props) {
     return (
@@ -121,7 +122,6 @@ function ProviderCard(props) {
                     </div>
                 </div>
             </div>
-
         </div>
 
     )
