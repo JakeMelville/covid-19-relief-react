@@ -2729,7 +2729,7 @@ function VaccineFinder() {
                     resetForm={resetForm}
                 />
                 <div className='row'>
-                    <ProviderCard
+                    <ProviderCard className='col-12'
                         nameState={nameState}
                         brandState={brandState}
                         brandWebsite={brandWebsite}
@@ -2807,7 +2807,7 @@ function VaccineFinder() {
                         brand18Website={brand18Website}
                         num18Locations={num18Locations}
                     />
-                    <VaccineFinderWidget />
+                    <VaccineFinderWidget className='col-12 justify-content-center'/>
                 </div>
 
             </div>

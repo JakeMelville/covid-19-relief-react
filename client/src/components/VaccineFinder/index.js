@@ -11,7 +11,7 @@ function VaccineFinderWidget() {
  
 
         <Iframe id="widget" url="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html" target="_blank"
-        position="relative"
+        position="center"
         width="288px"
         id="myId"
         className="myClassname"
