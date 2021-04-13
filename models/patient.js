@@ -22,26 +22,42 @@ const PatientSchema = new Schema({
     },
 });
 
-PatientSchema.methods = {
-  checkPassword: function (inputPassword) {
-    return bcrypt.compareSync(inputPassword, this.password)
-  },
-  hashPassword: plainTextPassword => {
-    return bcrypt.hashSync(plainTextPassword, 10)
-  }
+PatientSchema.methods.comparePassword = (password, callback) => {
+  bcrypt.compare(password, this.password, (error, isMatch) {
+    if (error) {
+      return callback(error)
+    } else {
+      callback(null, isMatch)
+    }
+  })
 }
 // refactor code to work using bcrpyt in mongoose
 PatientSchema.pre("save", true, (next) => {
+  const user = this
+
   console.log("this is patient schema.pre: ", this)
-  if (!this.password) {
-    console.log("no password!")
-    next()
+  if (this.isModified("password") || this.isNew) {
+    bcrypt.genSalt(10, (saltError, salt) => {
+      if (saltError) {
+        return next(saltError)
+      } else {
+        bcrypt.hash(user.paasword, salt, (hashError, hash) => {
+          if(hashError) {
+            return next(hashError)
+          }
+
+          user.password = hash
+          next()
+        })
+      }
+    })
   } else {
-    console.log("pre saved");
-    this.password = this.hashPassword(this.password)
-    next()
+    return next()
   }
 })
+
+
+
 
 const Patient = mongoose.model("Patient", PatientSchema)
 
