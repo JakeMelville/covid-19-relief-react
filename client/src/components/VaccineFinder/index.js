@@ -1,11 +1,11 @@
 import React from 'react'
 import Iframe from 'react-iframe'
-
+import './style.css'
 
 function VaccineFinderWidget() {
     return (
-        <div class="card mx-auto w-auto h-auto border-0 align-self-center">
-            <p class="">
+        <div id="vaccineContainer" class="card border-0 align-items-center">
+            <p class="vaccineUpdates">
         <a href={"https://www.nytimes.com/interactive/2020/us/covid-19-vaccine-doses.html"} target="_blank">For latest COVID-19 Vaccination Updates</a>
         </p>
  
