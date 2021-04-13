@@ -5,7 +5,7 @@ function ProviderCard(props) {
     return (
         <div className='container'>
             <div className='row justify-content-between'>
-                <h3 className='text-center col-12'>{props.nameState}</h3>
+                <h3 className='pl-5 ml-5 col-12'><strong>{props.nameState}</strong></h3>
                 <div id='brandNameCard0' className="card col-6 mb-1">
                     <div className="card-body">
                         <h6 className="card-subtitle mb-2 text-muted">{props.brandState}{`(${props.numLocations})`}</h6>
@@ -121,6 +121,7 @@ function ProviderCard(props) {
                     </div>
                 </div>
             </div>
+
         </div>
 
     )
