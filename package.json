@@ -1,4 +1,5 @@
 {
+  "homepage": "http://jakemelville.github.io/covid-19-relief-react",
   "name": "covid-19-relief",
   "version": "0.1.0",
   "main": "server.js",
