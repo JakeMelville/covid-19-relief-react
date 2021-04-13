@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
+const SALT_WORK_FACTOR = 10;
 
 const PatientSchema = new Schema({
     name: { 
@@ -22,40 +23,54 @@ const PatientSchema = new Schema({
     },
 });
 
-PatientSchema.methods.comparePassword = (password, callback) => {
-  bcrypt.compare(password, this.password, (error, isMatch) => {
-    if (error) {
-      return callback(error)
-    } else {
-      callback(null, isMatch)
-    }
-  })
+PatientSchema.methods = {
+  checkPassword: function (inputPassword) {
+    return bcrypt.compareSync(inputPassword, this.password)
+  },
+  hashPassword: plainTextPassword => {
+    return bcrypt.hashSync(plainTextPassword, 10)
+  }
 }
 // refactor code to work using bcrpyt in mongoose
 PatientSchema.pre("save", true, (next) => {
-  const user = this
-
   console.log("this is patient schema.pre: ", this)
-  if (this.isModified("password") || this.isNew) {
-    bcrypt.genSalt(10, (saltError, salt) => {
-      if (saltError) {
-        return next(saltError)
-      } else {
-        bcrypt.hash(user.paasword, salt, (hashError, hash) => {
-          if(hashError) {
-            return next(hashError)
-          }
-
-          user.password = hash
-          next()
-        })
-      }
-    })
+  if (!this.password) {
+    console.log("no password!")
+    next()
   } else {
-    return next()
+    console.log("pre saved");
+    this.password = this.hashPassword(this.password)
+    next()
   }
 })
 
+// PatientSchema.virtual("password").set((password) => {
+//   this._password = password;
+// });
+
+// PatientSchema.methods = {
+//   comparePassword: (candidatePassword,cb) => {
+//     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+//       if(err) return cb(err);
+//       cb(null, isMatch);
+//     });
+//   }
+// }
+
+// PatientSchema.pre("save", (next) => {
+//   const patientPass = this;
+//   if(patientPass._password === undefined) {
+//     return next();
+//   } 
+//   bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) {
+//     if(err) console.log(err);
+//     bcrypt.hash(patientPass._password, salt, (err, hash) {
+//       if(err) console.log(err);
+//       patientPass.hashed_password = hash;
+//       next();
+//     });
+//   });
+// });
 
 
 
