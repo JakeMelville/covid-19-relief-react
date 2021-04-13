@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Iframe from "react-iframe";
-import "../CovidUpdateSection/style.css";
+import "./style.css";
 
 function CovidUpdate() {
   const [covidUpdateState, setcovidUpdateState] = useState({
