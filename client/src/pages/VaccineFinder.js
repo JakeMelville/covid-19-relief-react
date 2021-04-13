@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../components/Nav/index';
-import VaccineFinderWidget from '../components/VaccineFinder';
+// import VaccineFinderWidget from '../components/VaccineFinder';
 import VaccineSearch from '../components/VaccineSearch';
 import ProviderCard from '../components/ProviderCard/index.js'
 import API from '../utils/API';
@@ -94,10 +94,6 @@ function VaccineFinder() {
 
     function handleSubmit(event) {
         event.preventDefault();
-
-        // document.getElementById('brandNameCard').style.display = 'block'
-
-
         document.getElementById('submitBtn').style.display = 'none'
         document.getElementById('resetBtn').style.display = 'block'
         document.getElementById('inputForm').style.display = 'none'
