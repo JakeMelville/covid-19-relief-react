@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../components/Nav/index';
-// import VaccineFinderWidget from '../components/VaccineFinder';
+import VaccineFinderWidget from '../components/VaccineFinder';
 import VaccineSearch from '../components/VaccineSearch';
 import ProviderCard from '../components/ProviderCard/index.js'
 import API from '../utils/API';
@@ -2728,84 +2728,88 @@ function VaccineFinder() {
                     handleSubmit={handleSubmit}
                     resetForm={resetForm}
                 />
-                <ProviderCard
-                    nameState={nameState}
-                    brandState={brandState}
-                    brandWebsite={brandWebsite}
-                    numLocations={numLocations}
+                <div className='row'>
+                    <ProviderCard
+                        nameState={nameState}
+                        brandState={brandState}
+                        brandWebsite={brandWebsite}
+                        numLocations={numLocations}
 
-                    brand1State={brand1State}
-                    brand1Website={brand1Website}
-                    num1Locations={num1Locations}
+                        brand1State={brand1State}
+                        brand1Website={brand1Website}
+                        num1Locations={num1Locations}
 
-                    brand2State={brand2State}
-                    brand2Website={brand2Website}
-                    num2Locations={num2Locations}
+                        brand2State={brand2State}
+                        brand2Website={brand2Website}
+                        num2Locations={num2Locations}
 
-                    brand3State={brand3State}
-                    brand3Website={brand3Website}
-                    num3Locations={num3Locations}
+                        brand3State={brand3State}
+                        brand3Website={brand3Website}
+                        num3Locations={num3Locations}
 
-                    brand4State={brand4State}
-                    brand4Website={brand4Website}
-                    num4Locations={num4Locations}
+                        brand4State={brand4State}
+                        brand4Website={brand4Website}
+                        num4Locations={num4Locations}
 
-                    brand5State={brand5State}
-                    brand5Website={brand5Website}
-                    num5Locations={num5Locations}
+                        brand5State={brand5State}
+                        brand5Website={brand5Website}
+                        num5Locations={num5Locations}
 
-                    brand6State={brand6State}
-                    brand6Website={brand6Website}
-                    num6Locations={num6Locations}
+                        brand6State={brand6State}
+                        brand6Website={brand6Website}
+                        num6Locations={num6Locations}
 
-                    brand7State={brand7State}
-                    brand7Website={brand7Website}
-                    num7Locations={num7Locations}
+                        brand7State={brand7State}
+                        brand7Website={brand7Website}
+                        num7Locations={num7Locations}
 
-                    brand8State={brand8State}
-                    brand8Website={brand8Website}
-                    num8Locations={num8Locations}
+                        brand8State={brand8State}
+                        brand8Website={brand8Website}
+                        num8Locations={num8Locations}
 
-                    brand9State={brand9State}
-                    brand9Website={brand9Website}
-                    num9Locations={num9Locations}
+                        brand9State={brand9State}
+                        brand9Website={brand9Website}
+                        num9Locations={num9Locations}
 
-                    brand10State={brand10State}
-                    brand10Website={brand10Website}
-                    num10Locations={num10Locations}
+                        brand10State={brand10State}
+                        brand10Website={brand10Website}
+                        num10Locations={num10Locations}
 
-                    brand11State={brand11State}
-                    brand11Website={brand11Website}
-                    num11Locations={num11Locations}
+                        brand11State={brand11State}
+                        brand11Website={brand11Website}
+                        num11Locations={num11Locations}
 
-                    brand12State={brand12State}
-                    brand12Website={brand12Website}
-                    num12Locations={num12Locations}
+                        brand12State={brand12State}
+                        brand12Website={brand12Website}
+                        num12Locations={num12Locations}
 
-                    brand13State={brand13State}
-                    brand13Website={brand13Website}
-                    num13Locations={num13Locations}
+                        brand13State={brand13State}
+                        brand13Website={brand13Website}
+                        num13Locations={num13Locations}
 
-                    brand14State={brand14State}
-                    brand14Website={brand14Website}
-                    num14Locations={num14Locations}
+                        brand14State={brand14State}
+                        brand14Website={brand14Website}
+                        num14Locations={num14Locations}
 
-                    brand15State={brand15State}
-                    brand15Website={brand15Website}
-                    num15Locations={num15Locations}
+                        brand15State={brand15State}
+                        brand15Website={brand15Website}
+                        num15Locations={num15Locations}
 
-                    brand16State={brand16State}
-                    brand16Website={brand16Website}
-                    num16Locations={num16Locations}
+                        brand16State={brand16State}
+                        brand16Website={brand16Website}
+                        num16Locations={num16Locations}
 
-                    brand17State={brand17State}
-                    brand17Website={brand17Website}
-                    num17Locations={num17Locations}
+                        brand17State={brand17State}
+                        brand17Website={brand17Website}
+                        num17Locations={num17Locations}
 
-                    brand18State={brand18State}
-                    brand18Website={brand18Website}
-                    num18Locations={num18Locations}
-                />
+                        brand18State={brand18State}
+                        brand18Website={brand18Website}
+                        num18Locations={num18Locations}
+                    />
+                    <VaccineFinderWidget />
+                </div>
+
             </div>
         </div>
     )
