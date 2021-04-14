@@ -1,11 +1,14 @@
 const db = require("../models");
-const local = require("passport-local").Strategy;
+// var passport = require("passport");
 
-const storage = new local(
+const LocalStrategy = require("passport-local").Strategy;
+
+const storage = new LocalStrategy(
     {
-        emailField: "email"
+        usernameField: "email"
     },
     function (email, password, done) {
+        console.log("Passport - auth - email: ", email);
         db.Patient.findOne({ email: email }, (err, patient) => {
             if(err) {
                 return done(err);

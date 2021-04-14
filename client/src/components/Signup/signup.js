@@ -5,7 +5,7 @@ function PatientSignup(props) {
   return (
     <div>
       <div className="card">
-        <div className="card-header">
+        {/* <div className="card-header">
           <button className="btn float-left">
             <Link
               to="/"
@@ -19,7 +19,7 @@ function PatientSignup(props) {
             </Link>
           </button>
           <h2 className="text-center">Create Account</h2>
-        </div>
+        </div> */}
         <div id="signup" role="tabpanel">
           <form id="signup-form" className="card-body">
             <div className="form-group">

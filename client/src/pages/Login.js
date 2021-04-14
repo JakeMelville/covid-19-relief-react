@@ -14,8 +14,9 @@ class Login extends React.Component {
     
     login = (patientData) => {
         // const info = this;
-        axios.post("/login", patientData)
+        axios.post("/api/login", patientData)
         .then((res) => {
+            console.log("login res: ", res);
             localStorage.setItem("patientID", res.data.id);
             localStorage.setItem("name", res.data.name);
 
@@ -55,10 +56,10 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <Nav
+                {/* <Nav
                     loggedIn={this.state.loggedIn}
                     patientLogin={this.patientLogin}>
-                </Nav>
+                </Nav> */}
                 <PatientLogin
                 handleInputChange={this.handleInputChange}
                 login={this.login}

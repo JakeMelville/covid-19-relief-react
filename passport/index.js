@@ -11,7 +11,7 @@ passport.serializeUser((patient, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    console.log("Deserialized");
+    console.log("*** deserializeUser id: ", id);
     db.Patient.findOne(
         { _id: id },
         "email",

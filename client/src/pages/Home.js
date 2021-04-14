@@ -7,7 +7,7 @@ function Home() {
     return (
         <div>
             <Header />
-            <Nav />
+            {/* <Nav /> */}
             <CovidUpdate />
         </div>
     )
