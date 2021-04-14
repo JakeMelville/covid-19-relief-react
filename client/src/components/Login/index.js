@@ -7,7 +7,6 @@
         <div>
             <div className="card text-center">
                 <div className="card-header">
-
                     <h2 className="p-5">WELCOME BACK!</h2>
                     <img className="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card cap" />
                 </div>
