@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import PatientLogin from "../components/Login/login";
+import PatientLogin from "../components/Login";
 import Nav from '../components/Nav';
 
 
