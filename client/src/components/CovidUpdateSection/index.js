@@ -23,21 +23,35 @@ function CovidUpdate() {
     }, []);
   });
   return (
+    
     <div className="card p-5 border-0">
-      
-      <p class="source">{covidUpdateState.source}</p>
-      <p class="headline font-italic">{covidUpdateState.headline.main}</p>
-      <p class="lead_paragraph">{covidUpdateState.lead_paragraph}</p>
-      <p class="snippet">{covidUpdateState.snippet}</p>
+      <div>
+        <p class="source">{covidUpdateState.source}</p>
+        <p class="headline font-italic">{covidUpdateState.headline.main}</p>
+        <p class="lead_paragraph">{covidUpdateState.lead_paragraph}</p>
+        <p class="snippet">{covidUpdateState.snippet}</p>
 
-      <a
-        href={
-          "https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html"
-        }
-        target="_blank"
-      >
-        For the latest COVID-19 Updates
-      </a>
+          <a
+            href={
+              "https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html"
+            }
+            target="_blank"
+          >
+            For the latest COVID-19 Updates
+          </a>
+      </div>
+      <div>
+        <form class="float-sm-right">
+          <div class="form-group row">
+
+          <label for="inputPassword2" class="sr-only">Search COVID or Coronavirus</label>
+
+          <input type="password" class="form-control" id="inputPassword2" placeholder="Search COVID or Coronavirus"></input>
+          
+          <button type="submit" class="btn btn-primary mb-2" onclick="showArticles()">Search NY Times Articles</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
