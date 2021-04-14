@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
+const SALT_WORK_FACTOR = 10;
 
 const PatientSchema = new Schema({
     name: { 
@@ -31,7 +32,7 @@ PatientSchema.methods = {
   }
 }
 // refactor code to work using bcrpyt in mongoose
-PatientSchema.pre("save", true, (next) => {
+PatientSchema.pre("save", function(next) {
   console.log("this is patient schema.pre: ", this)
   if (!this.password) {
     console.log("no password!")
@@ -42,6 +43,7 @@ PatientSchema.pre("save", true, (next) => {
     next()
   }
 })
+
 
 const Patient = mongoose.model("Patient", PatientSchema)
 
