@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Nav from '../components/Nav/index';
 import VaccineFinderWidget from '../components/VaccineFinder';
 import VaccineSearch from '../components/VaccineSearch';
 import ProviderCard from '../components/ProviderCard/index.js'
@@ -2721,7 +2720,6 @@ function VaccineFinder() {
     return (
         <div>
             <div className='pic-red'>
-                <Nav />
                 <VaccineSearch
                     vaccineState={vaccineState}
                     setVaccineState={setVaccineState}

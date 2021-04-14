@@ -6,7 +6,7 @@ function VaccineSearch(props) {
        
             <div className="container w-100 m-0 p-">
                 <div className="row w-100 m-0">
-                    <h2 id='headerBrands' className="col-12 text-center">Vaccine Provider Brands</h2>
+                    <h2 id='headerBrands' className="col-12 pt-5 text-center">Vaccine Provider Brands</h2>
                     <form id="inputForm" className="col-12 text-center pb-3" onSubmit={props.handleSubmit}>
                         <select name='state' value={props.vaccineState} onChange={(e) => props.setVaccineState(e.target.value)}>
                             <option value='AL'>AL</option>

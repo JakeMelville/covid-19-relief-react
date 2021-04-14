@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import TestFinder from '../components/TestFinder/index';
-import Nav from '../components/Nav/index';
 import API from '../utils/API';
 
 function TestLocator() {
@@ -135,7 +134,6 @@ function TestLocator() {
 console.log(isOpen);
   return (
     <div>
-      <Nav />
       <TestFinder
         handleSubmit={handleSubmit}
         results={locationState}

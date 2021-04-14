@@ -1,3 +1,10 @@
 ul {
  list-style-type: none;   
 }
+
+#loginName {
+    padding-left: 400px;
+}
+body {
+    background-color: blue;
+}
