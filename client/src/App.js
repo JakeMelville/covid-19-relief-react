@@ -11,6 +11,7 @@ import VaccineFinder from './pages/VaccineFinder';
 function App() {
   return (
     <Router>
+      <Nav />
       <div className="App">
            <Nav />
           <Route exact path='/' component={Home} />
