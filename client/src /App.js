@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Nav from './components/Nav'
 import Home from './pages/Home';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
@@ -10,6 +11,7 @@ import VaccineFinder from './pages/VaccineFinder';
 function App() {
   return (
     <Router>
+      <Nav />
       <div className="App">
           <Route exact path='/' component={Home} />
           <Route exact path='/login' component={Login} />

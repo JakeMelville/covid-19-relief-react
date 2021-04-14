@@ -5,7 +5,7 @@ const passport = require("../../passport")
 router.use("/patient", patientRoutes);
 
 // url: /api
-router.post("/login", passport.authenticate("local"), (req, res) => {
+router.post("/login", /* passport.authenticate("local"), */ (req, res) => {
       console.log("Login successful!, req.patient");
       const patientInfo = {
         id: req.patient._id,

@@ -8,6 +8,7 @@ const storage = new local(
         emailField: "email"
     },
     function (email, password, done) {
+        console.log("Passport - auth - email: ", email);
         db.Patient.findOne({ email: email }, (err, patient) => {
             if(err) {
                 return done(err);

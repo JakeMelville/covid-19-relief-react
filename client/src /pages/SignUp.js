@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PatientSignup from "../components/Signup/signup";
-import Nav from '../components/Nav';
+import PatientSignup from "../components/Signup";
 import API from '../utils/API';
 
 
@@ -57,10 +56,10 @@ class Signup extends React.Component {
     render() {
         return (
             <div>
-                <Nav
-                    loggedIn={this.state.loggedIn}
-                    patientLogin={this.patientLogin}>
-                </Nav>
+                {/* <Nav />
+                    // loggedIn={this.state.loggedIn}
+                    // patientLogin={this.patientLogin}>
+                // </Nav> */}
                 <PatientSignup
                 handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}>

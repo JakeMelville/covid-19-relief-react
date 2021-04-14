@@ -32,7 +32,7 @@ PatientSchema.methods = {
   }
 }
 // refactor code to work using bcrpyt in mongoose
-PatientSchema.pre("save", true, (next) => {
+PatientSchema.pre("save", function(next) {
   console.log("this is patient schema.pre: ", this)
   if (!this.password) {
     console.log("no password!")
@@ -43,35 +43,6 @@ PatientSchema.pre("save", true, (next) => {
     next()
   }
 })
-
-// PatientSchema.virtual("password").set((password) => {
-//   this._password = password;
-// });
-
-// PatientSchema.methods = {
-//   comparePassword: (candidatePassword,cb) => {
-//     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-//       if(err) return cb(err);
-//       cb(null, isMatch);
-//     });
-//   }
-// }
-
-// PatientSchema.pre("save", (next) => {
-//   const patientPass = this;
-//   if(patientPass._password === undefined) {
-//     return next();
-//   } 
-//   bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) {
-//     if(err) console.log(err);
-//     bcrypt.hash(patientPass._password, salt, (err, hash) {
-//       if(err) console.log(err);
-//       patientPass.hashed_password = hash;
-//       next();
-//     });
-//   });
-// });
-
 
 
 const Patient = mongoose.model("Patient", PatientSchema)
