@@ -40,6 +40,7 @@ function CovidUpdate() {
           "https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html"
         }
         target="_blank"
+        rel="noopener noreferrer"
       >
         For the latest COVID-19 Updates
       </a>
