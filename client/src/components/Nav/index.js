@@ -11,7 +11,6 @@ function Nav(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                    <li className={( props.loggedIn === "true") ? "" : "hiddenForNav"}><Link to="#">{`Welcome, ${localStorage.getItem('name')}!`}</Link></li>
                     <li onClick={props.patientLogin}>
                             <Link
                                 to='/'
@@ -84,6 +83,7 @@ function Nav(props) {
                                 Sign Up
                             </Link>
                         </li>
+                        <li id='loginWelcome' className={( props.loggedIn === "true") ? "" : "hiddenForNav"}><Link to="#">{`Welcome, ${localStorage.getItem('name')}!`}</Link></li>
                     </ul>
                 </div>
             </nav>
