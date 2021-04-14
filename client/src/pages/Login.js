@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from "axios";
-import PatientLogin from "../components/Login/login";
-import Nav from '../components/Nav';
+import PatientLogin from "../components/Login";
 
 
 class Login extends React.Component {
@@ -56,10 +55,6 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                {/* <Nav
-                    loggedIn={this.state.loggedIn}
-                    patientLogin={this.patientLogin}>
-                </Nav> */}
                 <PatientLogin
                 handleInputChange={this.handleInputChange}
                 login={this.login}
