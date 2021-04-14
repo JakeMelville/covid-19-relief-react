@@ -6,12 +6,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
-    "react": "^17.0.2",
+    "react": "^16.13.1",
     "react-bootstrap": "^1.5.2",
-    "react-dom": "^17.0.2",
+    "react-dom": "^16.13.1",
     "react-iframe": "^1.8.0",
     "react-redux": "^7.2.3",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -20,22 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "css-loader": "^5.2.0",
-    "style-loader": "^2.0.0"
-  },
-  "main": "index.js",
-  "description": ""
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }

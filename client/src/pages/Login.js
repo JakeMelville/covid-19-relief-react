@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
-import PatientLogin from "../components/Login";
+import PatientLogin from "../components/Login/login";
+import Nav from '../components/Nav';
 
 
 class Login extends React.Component {
@@ -13,8 +14,9 @@ class Login extends React.Component {
     
     login = (patientData) => {
         // const info = this;
-        axios.post("/login", patientData)
+        axios.post("/api/login", patientData)
         .then((res) => {
+            console.log("login res: ", res);
             localStorage.setItem("patientID", res.data.id);
             localStorage.setItem("name", res.data.name);
 

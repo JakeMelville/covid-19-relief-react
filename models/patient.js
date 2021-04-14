@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
-const SALT_WORK_FACTOR = 10;
 
 const PatientSchema = new Schema({
     name: { 
@@ -43,7 +42,6 @@ PatientSchema.pre("save", function(next) {
     next()
   }
 })
-
 
 const Patient = mongoose.model("Patient", PatientSchema)
 

@@ -1,5 +1,6 @@
-import React from 'react';
-import PatientSignup from "../components/Signup";
+import React, { Component } from 'react';
+import PatientSignup from "../components/Signup/signup";
+import Nav from '../components/Nav';
 import API from '../utils/API';
 
 

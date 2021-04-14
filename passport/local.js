@@ -1,11 +1,11 @@
-// const PatientModel = require("../models");
-const { Patient } = require("../models/patient");
 const db = require("../models");
-const local = require("passport-local").Strategy;
+// var passport = require("passport");
 
-const storage = new local(
+const LocalStrategy = require("passport-local").Strategy;
+
+const storage = new LocalStrategy(
     {
-        emailField: "email"
+        usernameField: "email"
     },
     function (email, password, done) {
         console.log("Passport - auth - email: ", email);
@@ -25,25 +25,3 @@ const storage = new local(
 );
 
 module.exports = storage;
-
-// module.exports = {
-//     loginPatient: (email, password, callback) => {
-//         PatientModel.findOne({ email: email }).exec((error, patient) => {
-//             if (error) {
-//                 callback({ error: true })
-//             } else if (!patients) {
-//                 callback({ error: true })
-//             } else {
-//                 patient.comparePassword(password, (matchError, isMatch) => {
-//                     if (matchError) {
-//                         callback({ error: true })
-//                     } else if (!isMatch) {
-//                         callback({ error: true })
-//                     } else {
-//                         callback({ success: true })
-//                     }
-//                 })
-//             }
-//         })
-//     }
-// }
