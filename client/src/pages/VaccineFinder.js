@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import VaccineFinderWidget from '../components/VaccineFinder';
 import VaccineSearch from '../components/VaccineSearch';
 import ProviderCard from '../components/ProviderCard/index.js'
