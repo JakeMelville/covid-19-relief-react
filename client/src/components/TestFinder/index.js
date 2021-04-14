@@ -9,7 +9,7 @@ function TestFinder(props) {
             <div className='pic bg-image'>
                 <div className="container w-100 m-0 p-">
                     <div className="row w-100 m-0">
-                        <h2 className="col-12 text-center">Find Testing Centers Near You</h2>
+                        <h2 className="col-12 text-center pt-5">Find Testing Centers Near You</h2>
                         <form id="inputForm" className="col-12 text-center pb-3" onSubmit={props.handleSubmit}>
                             <input id="input" type="text" placeholder="City, State" value={props.locationState} onChange={(e) => props.setLocationState(e.target.value)} />
                             <button id="submitBtn" className='btn-primary' type='submit'>Submit</button>
@@ -22,7 +22,7 @@ function TestFinder(props) {
                         <button id='contactBtn' type='button' className='btn btn-small btn-outline-info' onClick={props.showModal}>Contact</button>
                         <Modal show={props.isOpen} onHide={props.hideModal}>
                             <Modal.Body>
-                                Website: <a href={props.link1} target='_blank'>{props.link1}</a>
+                                Website: <a href={props.link1} target='_blank' rel="noopener noreferrer">{props.link1}</a>
                             </Modal.Body>
                             <Modal.Body>
                                 Phone Number: {props.number1}
@@ -36,7 +36,7 @@ function TestFinder(props) {
                     <button id='contactBtn2' type='button' className='btn btn-small btn-outline-info' onClick={props.showModal2}>Contact</button>
                     <Modal show={props.isOpen2} onHide={props.hideModal}>
                             <Modal.Body>
-                                Website: <a href={props.link2} target='_blank'>{props.link2}</a>
+                                Website: <a href={props.link2} target='_blank' rel="noopener noreferrer">{props.link2}</a>
                             </Modal.Body>
                             <Modal.Body>
                                 Phone Number: {props.number2}
@@ -51,7 +51,7 @@ function TestFinder(props) {
                     <button id='contactBtn3' type='button' className='btn btn-small btn-outline-info'  onClick={props.showModal3}>Contact</button>
                     <Modal show={props.isOpen3} onHide={props.hideModal}>
                             <Modal.Body>
-                                Website: <a href={props.link3} target='_blank'>{props.link3}</a>
+                                Website: <a href={props.link3} target='_blank' rel="noopener noreferrer">{props.link3}</a>
                             </Modal.Body>
                             <Modal.Body>
                                 Phone Number: {props.number3}
@@ -65,7 +65,7 @@ function TestFinder(props) {
                     <button id='contactBtn4' type='button' className='btn btn-small btn-outline-info'  onClick={props.showModal4}>Contact</button>
                     <Modal show={props.isOpen4} onHide={props.hideModal}>
                             <Modal.Body>
-                                Website: <a href={props.link4} target='_blank'>{props.link4}</a>
+                                Website: <a href={props.link4} target='_blank' rel="noopener noreferrer">{props.link4}</a>
                             </Modal.Body>
                             <Modal.Body>
                                 Phone Number: {props.number4}
@@ -79,7 +79,7 @@ function TestFinder(props) {
                     <button id='contactBtn5' type='button' className='btn btn-small btn-outline-info'  onClick={props.showModal5}>Contact</button>
                     <Modal show={props.isOpen5} onHide={props.hideModal}>
                             <Modal.Body>
-                                Website: <a href={props.link5} target='_blank'>{props.link5}</a>
+                                Website: <a href={props.link5} target='_blank' rel="noopener noreferrer">{props.link5}</a>
                             </Modal.Body>
                             <Modal.Body>
                                 Phone Number: {props.number5}
