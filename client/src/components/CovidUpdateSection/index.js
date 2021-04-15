@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Iframe from "react-iframe";
 import "../CovidUpdateSection/style.css";
 
 function CovidUpdate() {
@@ -25,6 +24,7 @@ function CovidUpdate() {
   });
   return (
     <div className="card p-5 border-0">
+      
       <p class="source">{covidUpdateState.source}</p>
       <p class="headline font-italic">{covidUpdateState.headline.main}</p>
       <p class="lead_paragraph">{covidUpdateState.lead_paragraph}</p>
