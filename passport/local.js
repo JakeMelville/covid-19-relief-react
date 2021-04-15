@@ -1,4 +1,4 @@
-const db = require("../models/patient");
+const db = require("../models/Patient");
 // var passport = require("passport");
 
 const LocalStrategy = require("passport-local").Strategy;

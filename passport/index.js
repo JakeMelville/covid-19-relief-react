@@ -1,4 +1,4 @@
-const db = require("../models/patient");
+const db = require("../models");
 const passport = require("passport");
 const local = require("./local");
 // const { Deserializer } = require("node:v8");
