@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PatientSignup from "../components/Signup/signup";
 import API from '../utils/API';
 
