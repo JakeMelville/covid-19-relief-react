@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const path = require("path");
-const apiRoutes = require("../../../../Downloads/covid-19-relief-react 2/routes/api");
+const apiRoutes = require("./api");
 // const testLocation = require("./testLocation")
 
 router.use("/api", apiRoutes);

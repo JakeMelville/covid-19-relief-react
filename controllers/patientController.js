@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/patient.js");
 
 // Defining methods for the patientController
 module.exports = {
