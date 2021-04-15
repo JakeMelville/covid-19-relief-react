@@ -5,21 +5,6 @@ function PatientSignup(props) {
   return (
     <div>
       <div className="card">
-        {/* <div className="card-header">
-          <button className="btn float-left">
-            <Link
-              to="/"
-              className={
-                window.location.pathname === "/"
-                  ? "btn-link active"
-                  : "btn-link"
-              }
-            >
-              Home
-            </Link>
-          </button>
-          <h2 className="text-center">Create Account</h2>
-        </div> */}
         <div id="signup" role="tabpanel">
           <form id="signup-form" className="card-body">
             <div className="form-group">
