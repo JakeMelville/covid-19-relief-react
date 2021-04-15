@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Nav from '../components/Nav/index';
 import VaccineFinderWidget from '../components/VaccineFinder';
 import VaccineSearch from '../components/VaccineSearch';
 import ProviderCard from '../components/ProviderCard/index.js'
@@ -140,7 +141,7 @@ function VaccineFinder() {
                         setBrand7Website(res.data[0].provider_brands[7].url)
                         setNum7Locations(res.data[0].provider_brands[7].location_count)
 
-                        for (let i = 0; i < 7; i++) {
+                        for (var i = 0; i < 7; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -186,7 +187,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[1].provider_brands[8].url)
                         setNum8Locations(res.data[1].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -246,7 +247,7 @@ function VaccineFinder() {
                         setBrand12Website(res.data[2].provider_brands[12].url)
                         setNum12Locations(res.data[2].provider_brands[12].location_count)
 
-                        for (let i = 0; i < 13; i++) {
+                        for (var i = 0; i < 13; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return
@@ -293,7 +294,7 @@ function VaccineFinder() {
                         setBrand9Website(res.data[3].provider_brands[9].url)
                         setNum9Locations(res.data[3].provider_brands[9].location_count)
 
-                        for (let i = 0; i < 10; i++) {
+                        for (var i = 0; i < 10; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -376,7 +377,7 @@ function VaccineFinder() {
                         setBrand18Website(res.data[4].provider_brands[18].url)
                         setNum18Locations(res.data[4].provider_brands[18].location_count)
 
-                        for (let i = 0; i < 19; i++) {
+                        for (var i = 0; i < 19; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -447,7 +448,7 @@ function VaccineFinder() {
                         setBrand15Website(res.data[5].provider_brands[15].url)
                         setNum15Locations(res.data[5].provider_brands[15].location_count)
 
-                        for (let i = 0; i < 16; i++) {
+                        for (var i = 0; i < 16; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -490,7 +491,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[6].provider_brands[8].url)
                         setNum8Locations(res.data[6].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -525,7 +526,7 @@ function VaccineFinder() {
                         setBrand6Website(res.data[7].provider_brands[6].url)
                         setNum6Locations(res.data[7].provider_brands[6].location_count)
 
-                        for (let i = 0; i < 7; i++) {
+                        for (var i = 0; i < 7; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -564,7 +565,7 @@ function VaccineFinder() {
                         setBrand7Website(res.data[8].provider_brands[7].url)
                         setNum7Locations(res.data[8].provider_brands[7].location_count)
 
-                        for (let i = 0; i < 8; i++) {
+                        for (var i = 0; i < 8; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -620,7 +621,7 @@ function VaccineFinder() {
                         setBrand11Website(res.data[9].provider_brands[11].url)
                         setNum11Locations(res.data[9].provider_brands[11].location_count)
 
-                        for (let i = 0; i < 12; i++) {
+                        for (var i = 0; i < 12; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -671,7 +672,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[10].provider_brands[10].url)
                         setNum10Locations(res.data[10].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -707,7 +708,7 @@ function VaccineFinder() {
                         setBrand6Website(res.data[11].provider_brands[6].url)
                         setNum6Locations(res.data[11].provider_brands[6].location_count)
 
-                        for (let i = 0; i < 7; i++) {
+                        for (var i = 0; i < 7; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -751,7 +752,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[12].provider_brands[8].url)
                         setNum8Locations(res.data[12].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -913,7 +914,7 @@ function VaccineFinder() {
                         setBrand9Website(res.data[15].provider_brands[9].url)
                         setNum9Locations(res.data[15].provider_brands[9].location_count)
 
-                        for (let i = 0; i < 10; i++) {
+                        for (var i = 0; i < 10; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -968,7 +969,7 @@ function VaccineFinder() {
                         setBrand11Website(res.data[16].provider_brands[11].url)
                         setNum11Locations(res.data[16].provider_brands[11].location_count)
 
-                        for (let i = 0; i < 12; i++) {
+                        for (var i = 0; i < 12; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -1020,7 +1021,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[17].provider_brands[10].url)
                         setNum10Locations(res.data[17].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
@@ -1068,7 +1069,7 @@ function VaccineFinder() {
                         setBrand9Website(res.data[18].provider_brands[9].url)
                         setNum9Locations(res.data[18].provider_brands[9].location_count)
 
-                        for (let i = 0; i < 10; i++) {
+                        for (var i = 0; i < 10; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1095,7 +1096,7 @@ function VaccineFinder() {
                         setBrand4Website(res.data[19].provider_brands[4].url)
                         setNum4Locations(res.data[19].provider_brands[4].location_count)
 
-                        for (let i = 0; i < 5; i++) {
+                        for (var i = 0; i < 5; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1148,7 +1149,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[21].provider_brands[10].url)
                         setNum10Locations(res.data[21].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1199,7 +1200,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[22].provider_brands[10].url)
                         setNum10Locations(res.data[22].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1250,7 +1251,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[23].provider_brands[10].url)
                         setNum10Locations(res.data[23].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1293,7 +1294,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[24].provider_brands[8].url)
                         setNum8Locations(res.data[24].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1344,7 +1345,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[25].provider_brands[10].url)
                         setNum10Locations(res.data[25].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1423,7 +1424,7 @@ function VaccineFinder() {
                         setBrand17Website(res.data[26].provider_brands[17].url)
                         setNum17Locations(res.data[26].provider_brands[17].location_count)
 
-                        for (let i = 0; i < 18; i++) {
+                        for (var i = 0; i < 18; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1470,7 +1471,7 @@ function VaccineFinder() {
                         setBrand9Website(res.data[27].provider_brands[9].url)
                         setNum9Locations(res.data[27].provider_brands[9].location_count)
 
-                        for (let i = 0; i < 10; i++) {
+                        for (var i = 0; i < 10; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1509,7 +1510,7 @@ function VaccineFinder() {
                         setBrand7Website(res.data[28].provider_brands[7].url)
                         setNum7Locations(res.data[28].provider_brands[7].location_count)
 
-                        for (let i = 0; i < 8; i++) {
+                        for (var i = 0; i < 8; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1564,7 +1565,7 @@ function VaccineFinder() {
                         setBrand11Website(res.data[29].provider_brands[11].url)
                         setNum11Locations(res.data[29].provider_brands[11].location_count)
 
-                        for (let i = 0; i < 12; i++) {
+                        for (var i = 0; i < 12; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1603,7 +1604,7 @@ function VaccineFinder() {
                         setBrand7Website(res.data[30].provider_brands[7].url)
                         setNum7Locations(res.data[30].provider_brands[7].location_count)
 
-                        for (let i = 0; i < 8; i++) {
+                        for (var i = 0; i < 8; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1654,7 +1655,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[31].provider_brands[10].url)
                         setNum10Locations(res.data[31].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1713,7 +1714,7 @@ function VaccineFinder() {
                         setBrand12Website(res.data[32].provider_brands[12].url)
                         setNum12Locations(res.data[32].provider_brands[12].location_count)
 
-                        for (let i = 0; i < 13; i++) {
+                        for (var i = 0; i < 13; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1780,7 +1781,7 @@ function VaccineFinder() {
                         setBrand14Website(res.data[33].provider_brands[14].url)
                         setNum14Locations(res.data[33].provider_brands[14].location_count)
 
-                        for (let i = 0; i < 15; i++) {
+                        for (var i = 0; i < 15; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1823,7 +1824,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[34].provider_brands[8].url)
                         setNum8Locations(res.data[34].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1854,7 +1855,7 @@ function VaccineFinder() {
                         setBrand5Website(res.data[35].provider_brands[5].url)
                         setNum5Locations(res.data[35].provider_brands[5].location_count)
 
-                        for (let i = 0; i < 6; i++) {
+                        for (var i = 0; i < 6; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1905,7 +1906,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[36].provider_brands[10].url)
                         setNum10Locations(res.data[36].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -1948,7 +1949,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[37].provider_brands[8].url)
                         setNum8Locations(res.data[37].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2007,7 +2008,7 @@ function VaccineFinder() {
                         setBrand12Website(res.data[38].provider_brands[12].url)
                         setNum12Locations(res.data[38].provider_brands[12].location_count)
 
-                        for (let i = 0; i < 13; i++) {
+                        for (var i = 0; i < 13; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2066,7 +2067,7 @@ function VaccineFinder() {
                         setBrand12Website(res.data[39].provider_brands[12].url)
                         setNum12Locations(res.data[39].provider_brands[12].location_count)
 
-                        for (let i = 0; i < 13; i++) {
+                        for (var i = 0; i < 13; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2097,7 +2098,7 @@ function VaccineFinder() {
                         setBrand5Website(res.data[40].provider_brands[5].url)
                         setNum5Locations(res.data[40].provider_brands[5].location_count)
 
-                        for (let i = 0; i < 6; i++) {
+                        for (var i = 0; i < 6; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2124,7 +2125,7 @@ function VaccineFinder() {
                         setBrand4Website(res.data[41].provider_brands[4].url)
                         setNum4Locations(res.data[41].provider_brands[4].location_count)
 
-                        for (let i = 0; i < 5; i++) {
+                        for (var i = 0; i < 5; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2175,7 +2176,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[42].provider_brands[10].url)
                         setNum10Locations(res.data[42].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2214,7 +2215,7 @@ function VaccineFinder() {
                         setBrand7Website(res.data[43].provider_brands[7].url)
                         setNum7Locations(res.data[43].provider_brands[7].location_count)
 
-                        for (let i = 0; i < 8; i++) {
+                        for (var i = 0; i < 8; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2257,7 +2258,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[44].provider_brands[8].url)
                         setNum8Locations(res.data[44].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2336,7 +2337,7 @@ function VaccineFinder() {
                         setBrand17Website(res.data[45].provider_brands[17].url)
                         setNum17Locations(res.data[45].provider_brands[17].location_count)
 
-                        for (let i = 0; i < 18; i++) {
+                        for (var i = 0; i < 18; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2347,7 +2348,7 @@ function VaccineFinder() {
                         setBrandWebsite(res.data[46].provider_brands[0].url)
                         setNumLocations(res.data[46].provider_brands[0].location_count)
 
-                        for (let i = 0; i < 1; i++) {
+                        for (var i = 0; i < 1; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2402,7 +2403,7 @@ function VaccineFinder() {
                         setBrand11Website(res.data[47].provider_brands[11].url)
                         setNum11Locations(res.data[47].provider_brands[11].location_count)
 
-                        for (let i = 0; i < 12; i++) {
+                        for (var i = 0; i < 12; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2445,7 +2446,7 @@ function VaccineFinder() {
                         setBrand8Website(res.data[48].provider_brands[8].url)
                         setNum8Locations(res.data[48].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2516,7 +2517,7 @@ function VaccineFinder() {
                         setBrand15Website(res.data[49].provider_brands[15].url)
                         setNum15Locations(res.data[49].provider_brands[15].location_count)
 
-                        for (let i = 0; i < 16; i++) {
+                        for (var i = 0; i < 16; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2575,7 +2576,7 @@ function VaccineFinder() {
                         setBrand12Website(res.data[50].provider_brands[12].url)
                         setNum12Locations(res.data[50].provider_brands[12].location_count)
 
-                        for (let i = 0; i < 13; i++) {
+                        for (var i = 0; i < 13; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2606,7 +2607,7 @@ function VaccineFinder() {
                         setBrand5Website(res.data[51].provider_brands[5].url)
                         setNum5Locations(res.data[51].provider_brands[5].location_count)
 
-                        for (let i = 0; i < 6; i++) {
+                        for (var i = 0; i < 6; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2657,7 +2658,7 @@ function VaccineFinder() {
                         setBrand10Website(res.data[52].provider_brands[10].url)
                         setNum10Locations(res.data[52].provider_brands[10].location_count)
 
-                        for (let i = 0; i < 11; i++) {
+                        for (var i = 0; i < 11; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
                         return;
@@ -2700,12 +2701,11 @@ function VaccineFinder() {
                         setBrand8Website(res.data[53].provider_brands[8].url)
                         setNum8Locations(res.data[53].provider_brands[8].location_count)
 
-                        for (let i = 0; i < 9; i++) {
+                        for (var i = 0; i < 9; i++) {
                             document.getElementById(`brandNameCard${i}`).style.display = 'block';
                         }
 
                         return;
-                        default: console.log('No state selected');
                 }
 
 
@@ -2721,6 +2721,7 @@ function VaccineFinder() {
     return (
         <div>
             <div className='pic-red'>
+                <Nav />
                 <VaccineSearch
                     vaccineState={vaccineState}
                     setVaccineState={setVaccineState}
@@ -2822,9 +2823,3 @@ function VaccineFinder() {
 
 
 export default VaccineFinder;
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./style.css";
+import "../CovidUpdateSection/style.css";
 
 function CovidUpdate() {
   const [covidUpdateState, setcovidUpdateState] = useState({

@@ -4,9 +4,9 @@ import './style.css'
 
 function VaccineFinderWidget() {
     return (
-        <div id="vaccineContainer" className="card border-0 align-items-center">
+        <div id="vaccineContainer" classNmae="card border-0 align-items-center">
             <p className="vaccineUpdates">
-        <a href={"https://www.nytimes.com/interactive/2020/us/covid-19-vaccine-doses.html"} target="_blank" rel="noopener noreferrer">For latest COVID-19 Vaccination Updates</a>
+        <a href={"https://www.nytimes.com/interactive/2020/us/covid-19-vaccine-doses.html"} target="_blank">For latest COVID-19 Vaccination Updates</a>
         </p>
  
 
