@@ -25,10 +25,10 @@ function CovidUpdate() {
   return (
     <div className="card p-5 border-0">
       
-      <p class="source">{covidUpdateState.source}</p>
-      <p class="headline font-italic">{covidUpdateState.headline.main}</p>
-      <p class="lead_paragraph">{covidUpdateState.lead_paragraph}</p>
-      <p class="snippet">{covidUpdateState.snippet}</p>
+      <p className="source">{covidUpdateState.source}</p>
+      <p className="headline font-italic">{covidUpdateState.headline.main}</p>
+      <p className="lead_paragraph">{covidUpdateState.lead_paragraph}</p>
+      <p className="snippet">{covidUpdateState.snippet}</p>
 
       <a
         href={

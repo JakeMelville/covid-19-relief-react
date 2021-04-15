@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 // import PatientProfile from "../components/MyProfile/myProfile";
 // import axios from "axios";
 
@@ -29,6 +29,10 @@
 //         });
 //     }
 // }
+function MyProfile() {
+    return(
+        <div>my profile</div>
+    )
+}
 
-
-// export default MyProfile;
+export default MyProfile;
