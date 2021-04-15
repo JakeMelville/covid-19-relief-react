@@ -4,7 +4,7 @@ export default {
   getLatLng: function (q) {
     console.log("getLatLng q: ", q);
     return axios.get(
-      "http://www.mapquestapi.com/geocoding/v1/address?key=WFU3qGtFSrPpKOpC8vhpd3bfXKHEP4My&location=" +
+      "https://www.mapquestapi.com/geocoding/v1/address?key=WFU3qGtFSrPpKOpC8vhpd3bfXKHEP4My&location=" +
         q
     );
   },
