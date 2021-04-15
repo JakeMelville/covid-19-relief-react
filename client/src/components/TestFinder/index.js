@@ -89,7 +89,7 @@ function TestFinder(props) {
                         </Modal.Footer>
                         </Modal>
                     </ul>
-                <img className='col-5' src={props.mapSrc} />
+                <img className='col-5' src={props.mapSrc} alt={''}/>
             </div>
         </div>
         </div >
