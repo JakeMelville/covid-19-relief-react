@@ -31,7 +31,7 @@ PatientSchema.methods = {
   }
 }
 // refactor code to work using bcrpyt in mongoose
-PatientSchema.pre("save", true, (next) => {
+PatientSchema.pre("save",  function (next) {
   console.log("this is patient schema.pre: ", this)
   if (!this.password) {
     console.log("no password!")
