@@ -187,6 +187,3 @@ console.log(isOpen);
 
 
 export default TestLocator;
-
-
-
