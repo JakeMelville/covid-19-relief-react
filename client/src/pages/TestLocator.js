@@ -71,6 +71,10 @@ function TestLocator() {
     setIsOpen5(false)
   }
 
+  function saved() {
+    alert('Testing site saved to My Profile!');
+    
+  }
 
   useEffect(() => {
     if (!latLngState) {
@@ -129,6 +133,13 @@ function TestLocator() {
     document.getElementById('contactBtn3').style.display = 'block'
     document.getElementById('contactBtn4').style.display = 'block'
     document.getElementById('contactBtn5').style.display = 'block'
+
+    document.getElementById('saveBtn').style.display ='block'
+    document.getElementById('saveBtn2').style.display ='block'
+    document.getElementById('saveBtn3').style.display ='block'
+    document.getElementById('saveBtn4').style.display ='block'
+    document.getElementById('saveBtn5').style.display ='block'
+
   }
 
 console.log(isOpen);
@@ -139,6 +150,7 @@ console.log(isOpen);
         results={locationState}
         setLocationState={setLocationState}
 
+        saved={saved}
         showModal={showModal}
         hideModal={hideModal}
         showModal2={showModal2}

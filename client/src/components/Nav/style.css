@@ -5,3 +5,8 @@ ul {
 #loginWelcome {
     padding-left: 400px;
 }
+
+#logout {
+    display: none;
+
+}
