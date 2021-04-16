@@ -53,6 +53,17 @@ class Signup extends React.Component {
         }
     }
 
+    // patientLogin = (id) => {
+    //     const user = this.state.email.find((user) => user.id === id)
+
+    //     API.savePatient({
+    //         email: user.id,
+    //         name: user.patientInfo.name,
+    //         cellPhone: user.patientInfo.cellPhone,
+    //         testSite: user.patientInfo.testSite,
+    //     }).then(() => this.testLocator());
+    // };
+
     render() {
         return (
             <div>
