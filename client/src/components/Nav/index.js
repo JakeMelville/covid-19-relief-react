@@ -11,7 +11,7 @@ function Nav(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                    <li onClick={props.patientLogin}>
+                    <li onClick={props.patientLogin} className="display ">
                             <Link
                                 to='/'
                                 className={
