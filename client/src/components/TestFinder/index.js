@@ -37,7 +37,7 @@ function TestFinder(props) {
 
                     <li className='p-2'>{props.testingSite2}</li>
                     <button id='contactBtn2' type='button' className='float-left btn btn-small btn-outline-info' onClick={props.showModal2}>Contact</button>
-                    <button id='saveBtn2' type='button' className="btn btn-small btn-primary" onClick={props.saved}>Save</button>
+                    <button id='saveBtn2' type='button' className="btn btn-small btn-primary" onClick={props.saved2}>Save</button>
                     <Modal show={props.isOpen2} onHide={props.hideModal}>
                             <Modal.Body>
                                 Website: <a href={props.link2} target='_blank' rel="noopener noreferrer">{props.link2}</a>
@@ -53,7 +53,7 @@ function TestFinder(props) {
 
                     <li className='p-2'>{props.testingSite3}</li>
                     <button id='contactBtn3' type='button' className='float-left btn btn-small btn-outline-info'  onClick={props.showModal3}>Contact</button>
-                    <button id='saveBtn3' type='button' className="btn btn-small btn-primary" onClick={props.saved}>Save</button>
+                    <button id='saveBtn3' type='button' className="btn btn-small btn-primary" onClick={props.saved3}>Save</button>
                     <Modal show={props.isOpen3} onHide={props.hideModal}>
                             <Modal.Body>
                                 Website: <a href={props.link3} target='_blank' rel="noopener noreferrer">{props.link3}</a>
@@ -68,7 +68,7 @@ function TestFinder(props) {
                     
                     <li className='p-2'>{props.testingSite4}</li>
                     <button id='contactBtn4' type='button' className='float-left btn btn-small btn-outline-info'  onClick={props.showModal4}>Contact</button>
-                    <button id='saveBtn4' type='button' className="btn btn-small btn-primary" onClick={props.saved}>Save</button>
+                    <button id='saveBtn4' type='button' className="btn btn-small btn-primary" onClick={props.saved4}>Save</button>
                     <Modal show={props.isOpen4} onHide={props.hideModal}>
                             <Modal.Body>
                                 Website: <a href={props.link4} target='_blank' rel="noopener noreferrer">{props.link4}</a>
@@ -83,7 +83,7 @@ function TestFinder(props) {
 
                     <li className='p-2'>{props.testingSite5}</li>
                     <button id='contactBtn5' type='button' className='float-left btn btn-small btn-outline-info'  onClick={props.showModal5}>Contact</button>
-                    <button id='saveBtn5' type='button' className="btn btn-small btn-primary" onClick={props.saved}>Save</button>
+                    <button id='saveBtn5' type='button' className="btn btn-small btn-primary" onClick={props.saved5}>Save</button>
                     <Modal show={props.isOpen5} onHide={props.hideModal}>
                             <Modal.Body>
                                 Website: <a href={props.link5} target='_blank' rel="noopener noreferrer">{props.link5}</a>

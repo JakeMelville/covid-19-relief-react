@@ -73,16 +73,31 @@ function TestLocator() {
 
   function saved() {
     alert('Testing site saved to My Profile!');
-    if (document.getElementById('saveBtn')) {
-      localStorage.setItem('test site', testingSite1)
-      localStorage.setItem('url', link1)
-      console.log(link1);
-    }
-    if (document.getElementById('saveBtn2')) {
-      localStorage.setItem('test site', testingSite2)
-      localStorage.setItem('url', link2)
-    }
 
+    localStorage.setItem('test site', testingSite1)
+    localStorage.setItem('url', link1)
+  }
+  function saved2() {
+    alert('Testing site saved to My Profile!');
+    localStorage.setItem('test site', testingSite2)
+    localStorage.setItem('url', link2)
+  }
+  function saved3() {
+    alert('Testing site saved to My Profile!');
+    localStorage.setItem('test site', testingSite3)
+    localStorage.setItem('url', link3)
+  }
+  function saved4() {
+    alert('Testing site saved to My Profile!');
+    localStorage.setItem('test site', testingSite4)
+    localStorage.setItem('url', link4)
+  }
+
+  function saved5() {
+    alert('Testing site saved to My Profile!');
+
+    localStorage.setItem('test site', testingSite5)
+    localStorage.setItem('url', link5)
 
   }
 
@@ -161,6 +176,11 @@ function TestLocator() {
         setLocationState={setLocationState}
 
         saved={saved}
+        saved2={saved2}
+        saved3={saved3}
+        saved4={saved4}
+        saved5={saved5}
+
 
         showModal={showModal}
         hideModal={hideModal}
