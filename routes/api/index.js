@@ -8,6 +8,7 @@ router.use("/patient", patientRoutes);
 // Matches: /api/login
 router.post("/login", passport.authenticate("local"), (req, res) => {
   console.log("Login successful!, req.user: ", req.user);
+  
   const patientInfo = {
     id: req.user._id,
     name: req.user.name,

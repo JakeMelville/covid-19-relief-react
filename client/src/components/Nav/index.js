@@ -83,7 +83,19 @@ function Nav(props) {
                                 Sign Up
                             </Link>
                         </li>
-                        <li id='loginWelcome' className={( props.loggedIn === "true") ? "" : "hiddenForNav"}><Link to="#">{`Welcome, ${localStorage.getItem('name')}!`}</Link></li>
+                        <li id='logout' className="nav-item">
+                            <Link
+                                to='/login'
+                                className={
+                                    window.location.pathname === '/login'
+                                        ? 'nav-link active'
+                                        : 'nav-link'
+                                }
+                            >
+                                Logout
+                            </Link>
+                        </li>
+                        <li id='loginWelcome' className={( props.loggedIn === "true") ? "" : "hiddenForNav"}>{`Welcome, ${localStorage.getItem('name')}!`}</li>
                     </ul>
                 </div>
             </nav>
