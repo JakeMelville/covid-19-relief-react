@@ -30,6 +30,10 @@ import React from 'react';
 //     }
 // }
 function MyProfile() {
+    const savedSite = localStorage.getItem('test site');
+    const savedUrl = localStorage.getItem('url')
+
+
     return (
         <div className='row justify-content-center pt-5'>
             <div className="card col-8 justify-content-around">
@@ -42,8 +46,8 @@ function MyProfile() {
                     <li className="list-group-item">Password</li>
                 </ul>
                 <div className="card-body">
-                    <h6>Test Site: </h6>
-                    <a href="#" className="card-link">Not sure of we'll need a link</a>
+                    <h6>Test Site: {savedSite}</h6>
+                    <a href={savedUrl} className="card-link">{savedUrl}</a>
                 </div>
             </div>
         </div>

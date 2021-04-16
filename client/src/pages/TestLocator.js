@@ -73,7 +73,17 @@ function TestLocator() {
 
   function saved() {
     alert('Testing site saved to My Profile!');
-    
+    if (document.getElementById('saveBtn')) {
+      localStorage.setItem('test site', testingSite1)
+      localStorage.setItem('url', link1)
+      console.log(link1);
+    }
+    if (document.getElementById('saveBtn2')) {
+      localStorage.setItem('test site', testingSite2)
+      localStorage.setItem('url', link2)
+    }
+
+
   }
 
   useEffect(() => {
@@ -134,15 +144,15 @@ function TestLocator() {
     document.getElementById('contactBtn4').style.display = 'block'
     document.getElementById('contactBtn5').style.display = 'block'
 
-    document.getElementById('saveBtn').style.display ='block'
-    document.getElementById('saveBtn2').style.display ='block'
-    document.getElementById('saveBtn3').style.display ='block'
-    document.getElementById('saveBtn4').style.display ='block'
-    document.getElementById('saveBtn5').style.display ='block'
+    document.getElementById('saveBtn').style.display = 'block'
+    document.getElementById('saveBtn2').style.display = 'block'
+    document.getElementById('saveBtn3').style.display = 'block'
+    document.getElementById('saveBtn4').style.display = 'block'
+    document.getElementById('saveBtn5').style.display = 'block'
 
   }
 
-console.log(isOpen);
+  console.log(isOpen);
   return (
     <div>
       <TestFinder
@@ -151,6 +161,7 @@ console.log(isOpen);
         setLocationState={setLocationState}
 
         saved={saved}
+
         showModal={showModal}
         hideModal={hideModal}
         showModal2={showModal2}
@@ -161,7 +172,7 @@ console.log(isOpen);
         hideModal4={hideModal4}
         showModal5={showModal5}
         hideModal5={hideModal5}
-       
+
         isOpen={isOpen}
         isOpen2={isOpen2}
         isOpen3={isOpen3}
