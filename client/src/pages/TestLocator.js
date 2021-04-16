@@ -73,7 +73,32 @@ function TestLocator() {
 
   function saved() {
     alert('Testing site saved to My Profile!');
-    
+
+    localStorage.setItem('test site', testingSite1)
+    localStorage.setItem('url', link1)
+  }
+  function saved2() {
+    alert('Testing site saved to My Profile!');
+    localStorage.setItem('test site', testingSite2)
+    localStorage.setItem('url', link2)
+  }
+  function saved3() {
+    alert('Testing site saved to My Profile!');
+    localStorage.setItem('test site', testingSite3)
+    localStorage.setItem('url', link3)
+  }
+  function saved4() {
+    alert('Testing site saved to My Profile!');
+    localStorage.setItem('test site', testingSite4)
+    localStorage.setItem('url', link4)
+  }
+
+  function saved5() {
+    alert('Testing site saved to My Profile!');
+
+    localStorage.setItem('test site', testingSite5)
+    localStorage.setItem('url', link5)
+
   }
 
   useEffect(() => {
@@ -134,15 +159,15 @@ function TestLocator() {
     document.getElementById('contactBtn4').style.display = 'block'
     document.getElementById('contactBtn5').style.display = 'block'
 
-    document.getElementById('saveBtn').style.display ='block'
-    document.getElementById('saveBtn2').style.display ='block'
-    document.getElementById('saveBtn3').style.display ='block'
-    document.getElementById('saveBtn4').style.display ='block'
-    document.getElementById('saveBtn5').style.display ='block'
+    document.getElementById('saveBtn').style.display = 'block'
+    document.getElementById('saveBtn2').style.display = 'block'
+    document.getElementById('saveBtn3').style.display = 'block'
+    document.getElementById('saveBtn4').style.display = 'block'
+    document.getElementById('saveBtn5').style.display = 'block'
 
   }
 
-console.log(isOpen);
+  console.log(isOpen);
   return (
     <div>
       <TestFinder
@@ -151,6 +176,12 @@ console.log(isOpen);
         setLocationState={setLocationState}
 
         saved={saved}
+        saved2={saved2}
+        saved3={saved3}
+        saved4={saved4}
+        saved5={saved5}
+
+
         showModal={showModal}
         hideModal={hideModal}
         showModal2={showModal2}
@@ -161,7 +192,7 @@ console.log(isOpen);
         hideModal4={hideModal4}
         showModal5={showModal5}
         hideModal5={hideModal5}
-       
+
         isOpen={isOpen}
         isOpen2={isOpen2}
         isOpen3={isOpen3}
