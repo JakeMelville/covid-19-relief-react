@@ -36,4 +36,16 @@ router.post("/logout", (req, res) => {
   }
 });
 
+
+// in case the code on top does not work
+
+// router.get("/logout", (req, res) => {
+//   console.log("Logged Out!")
+//   req.logout();
+//   res.json({
+//     status: "logout",
+//     msg: "Please log in again"
+//   });
+// });
+
 module.exports = router;

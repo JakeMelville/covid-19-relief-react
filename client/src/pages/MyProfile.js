@@ -1,57 +1,74 @@
 import React from 'react';
-// import PatientProfile from "../components/MyProfile/myProfile";
-// import axios from "axios";
+import PatientProfile from "../components/MyProfile";
+import axios from "axios";
 
-// class MyProfile extends React.Component {
-//     state = {
-//         loggedIn: localStorage.getItem("loggedIn"),
-//         userID: "",
+class Profile extends React.Component {
+    state = {
+        loggedIn: localStorage.getItem("loggedIn"),
+        userID: "",
 
-//         name: "",
-//         cellPhone: "",
-//         email: "",
-//         password: "",
+        name: "",
+        cellPhone: "",
+        email: "",
+        password: "",
 
-//         visible: true,
-//     }
+        visible: false,
+    }
 
-//     patientInfo = (patientData) => {
-//         axios.get(`/pateint/${patientData}`)
-//         .then((res) => {
-//             this.state({
-//                 name: res.data[0].name,
-//                 cellPhone: res.data[0].cellPhone,
-//                 email: res.data[0].email,
-//             });
-//         })
-//         .catch((err) => {
-//             console.log(error);
-//         });
-//     }
+    patientInfo = (patientData) => {
+        axios.get(`/pateint/${patientData}`)
+        .then((res) => {
+            this.state({
+                name: res.data.name,
+                cellPhone: res.data.cellPhone,
+                email: res.data.email,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+
+// componentDidMount() {
+//     this.state({ pateintId: localStorage.getItem("patientId")}, () => {
+//         this.patientInfo(this.state.pateintId)
+//     });
 // }
-function MyProfile() {
-    const savedSite = localStorage.getItem('test site');
-    const savedUrl = localStorage.getItem('url')
 
+// handleInputChange = e => {
+//     const name = e.target.name;
+//     let value = e.target.value;
 
-    return (
-        <div className='row justify-content-center pt-5'>
-            <div className="card col-8 justify-content-around">
-                <div className="card-body">
-                    <h5 className="card-title">Name</h5>
-                </div>
-                <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Email:</li>
-                    <li className="list-group-item">Cell Phone Number:</li>
-                    <li className="list-group-item">Password</li>
-                </ul>
-                <div className="card-body">
-                    <h6>Test Site: {savedSite}</h6>
-                    <a href={savedUrl} className="card-link">{savedUrl}</a>
-                </div>
+//     this.setState({
+//         [name]: value
+//     });
+// };
+
+// handleFormSubmit = e => {
+//     e.preventDefault();
+
+    manageLogin = () => {
+        if (this.state.loggedIn === "true") {
+            localStorage.setItem("name", "");
+            localStorage.setItem("email", "");
+            localStorage.setItem("cellPhone", "");
+            this.setState({ email: "", loggedIn: "false", userId: ""});
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <PatientProfile
+                    name={this.state.name}
+                    email={this.state.email}
+                    cellPhone={this.state.cellPhone}
+                />
             </div>
-        </div>
-    )
-}
 
-export default MyProfile;
+        )
+    }
+};
+
+export default Profile;
