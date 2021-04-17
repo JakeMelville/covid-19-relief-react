@@ -19,7 +19,7 @@ class Login extends React.Component {
       this.setState({
         theName: res.data.name,
       });
-      alert("testing " + this.state.theName);
+      
 
       this.setState({ loggedIn: true }, () => {
         localStorage.setItem("loggedIn", true);

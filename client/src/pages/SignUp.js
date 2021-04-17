@@ -25,6 +25,7 @@ class Signup extends React.Component {
         API.savePatient(newPatient)
         .then((res) => {
             console.log("patient saved: ", res)
+            // window.location.replace("/");
         })
         .catch((err) => {
             console.log(err)
