@@ -34,6 +34,13 @@ module.exports = {
       .then(dbResults => dbResults .remove())
       .then(dbResults => res.json(dbResults))
       .catch(err => res.status(422).json(err));
+  },
+  logout: function(req, res) {
+    db.Patient
+      .findById({ _id: req.params.id })
+      .then(dbResults => dbResults .logout())
+      .then(dbResults => res.json(dbResults))
+      .catch(err => res.status(422).json(err));
   }
 };
 
