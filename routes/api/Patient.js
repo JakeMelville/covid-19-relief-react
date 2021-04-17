@@ -13,4 +13,7 @@ router
   .put(patientController.update)
   .delete(patientController.remove);
 
+// router.get("/logout", patientController.logout);
+// router.get("/login", patientController.login);
+
 module.exports = router;
