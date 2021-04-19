@@ -15,7 +15,7 @@ return (
                </div>
                <form id="login-form" className="card-body" onSubmit={props.handleFormSubmit}>
                    <div className="form-group">
-                       <label htmlFor="username-input-login" className="control-label col-sm font-weight-bold">Username</label>
+                       <label htmlFor="username-input-login" className="control-label col-sm font-weight-bold">Email</label>
                        <input type="text" id="email" onChange={props.handleInputChange} className="validate"  name="email" placeholder="EMAIL" />
                    </div>
                    <div className="form-group">

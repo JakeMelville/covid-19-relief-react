@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PatientSignup from "../components/Signup/signup";
+import PatientSignup from "../components/Signup";
 import API from '../utils/API';
 
 
-class Signup extends React.Component {
+class Signup extends Component {
    state = {
             // loggedIn: localStorage.getItem(loggedIn),
             name: "",
@@ -25,6 +25,7 @@ class Signup extends React.Component {
         API.savePatient(newPatient)
         .then((res) => {
             console.log("patient saved: ", res)
+            // window.location.replace("/");
         })
         .catch((err) => {
             console.log(err)
@@ -52,6 +53,17 @@ class Signup extends React.Component {
             this.setState({ email: "", loggedIn: "false", userID: ""});
         }
     }
+
+    // patientLogin = (id) => {
+    //     const user = this.state.email.find((user) => user.id === id)
+
+    //     API.savePatient({
+    //         email: user.id,
+    //         name: user.patientInfo.name,
+    //         cellPhone: user.patientInfo.cellPhone,
+    //         testSite: user.patientInfo.testSite,
+    //     }).then(() => this.testLocator());
+    // };
 
     render() {
         return (
