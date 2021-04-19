@@ -13,6 +13,7 @@ User can log in or sign up and have their informatio stored in their profile pag
 User will be able to save testing location directly to their profile page.
 
 ## Link
+https://jm-covid-19-relief-react.herokuapp.com/
 
 ## Demo
 https://www.youtube.com/watch?v=Q55JQ772OqQ
