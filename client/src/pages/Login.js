@@ -16,6 +16,8 @@ class Login extends React.Component {
       console.log("login res: ", res.data);
       localStorage.setItem("patientID", res.data.id);
       localStorage.setItem("name", res.data.name);
+      localStorage.setItem("email", res.data.email);
+      localStorage.setItem("cellPhone", res.data.cellPhone);
       this.setState({
         theName: res.data.name,
       });
