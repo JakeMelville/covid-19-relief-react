@@ -12,3 +12,5 @@ export function Logout() {
         });
     }
 }
+
+export default Logout;

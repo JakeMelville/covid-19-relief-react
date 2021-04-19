@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp';
 import MyProfile from './pages/MyProfile'
 import TestLocator from './pages/TestLocator';
 import VaccineFinder from './pages/VaccineFinder';
+import Logout from './pages/Logout'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path='/myprofile' component={MyProfile} />
           <Route exact path='/testlocator' component={TestLocator} />
           <Route exact path='/vaccinefinder' component={VaccineFinder} />
+          <Route exact path='/logout' component={Logout}/>
       </div>
     </Router>
   );
