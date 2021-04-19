@@ -16,6 +16,8 @@ User will be able to save testing location directly to their profile page.
 
 
 ## Screenshot 
+<img width="1569" alt="Screen Shot 2021-04-19 at 12 40 01 AM" src="https://user-images.githubusercontent.com/77857718/115182328-caf57a80-a0a7-11eb-8694-eca17692c849.png">
+
 
 
 
