@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 import Modal from "react-bootstrap/Modal";
-import Modal2 from "react-bootstrap/Modal"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 function TestFinder(props) {

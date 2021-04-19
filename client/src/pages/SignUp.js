@@ -3,7 +3,7 @@ import PatientSignup from "../components/Signup";
 import API from '../utils/API';
 
 
-class Signup extends React.Component {
+class Signup extends Component {
    state = {
             // loggedIn: localStorage.getItem(loggedIn),
             name: "",
