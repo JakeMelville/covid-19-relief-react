@@ -10,7 +10,7 @@ function TestFinder(props) {
             <div className='pic bg-image'>
                 <div className="container w-100 m-0 p-">
                     <div className="row w-100 m-0">
-                        <h2 className="col-12 text-center">Find Testing Centers Near You</h2>
+                        <h2 className="col-12 text-center pt-5">Find Testing Centers Near You</h2>
                         <form id="inputForm" className="col-12 text-center pb-3" onSubmit={props.handleSubmit}>
                             <input id="input" type="text" placeholder="City, State" value={props.locationState} onChange={(e) => props.setLocationState(e.target.value)} />
                             <button id="submitBtn" className='btn-primary' type='submit'>Submit</button>
