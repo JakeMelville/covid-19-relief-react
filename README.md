@@ -26,6 +26,12 @@ https://www.youtube.com/watch?v=Q55JQ772OqQ
 
 ## Installation
 
+* npm i
+* npm start
+
+
+## Workflow
+
 * Create HTMLs, add CSS/BootStrap, add Javascript for basic landing page
 
 * Create a regisrtation page (and login) - client side
@@ -45,10 +51,10 @@ https://www.youtube.com/watch?v=Q55JQ772OqQ
 * Test connecting user input variable from client side to the server 
 side with using routes
 
-## Build Status
+## Build Status/Deployment
 
 Build status of continous integration with Heroku is successful.
 
 ## Technologies
 
-HTML, CSS, Bootstrap, Javascript, Sequelize, Bcrypt, Mongo, React
+HTML, CSS, Bootstrap, Javascript, Sequelize, Bcrypt, MongoDB, React, 
